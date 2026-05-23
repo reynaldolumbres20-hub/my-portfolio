@@ -53,23 +53,27 @@ body {
     z-index: 1;
 }
 
-/* ========== HERO SECTION ========== */
+/* ========== HERO SECTION - CENTERED ========== */
 .hero {
-    display: flex;
-    align-items: center;
-    gap: 50px;
     background: rgba(12, 12, 20, 0.5);
     backdrop-filter: blur(16px);
     border-radius: 48px;
-    padding: 40px 48px;
+    padding: 50px 40px;
     margin-bottom: 40px;
     border: 1px solid rgba(255,255,255,0.06);
 }
 
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .avatar-frame {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
 }
 
 .avatar-glow {
@@ -100,8 +104,8 @@ body {
     bottom: 5px;
     right: 5px;
     background: #1a1a2e;
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -123,38 +127,38 @@ body {
     color: #888;
 }
 
-.hero-right {
-    flex: 1;
-}
-
-.hero-right h1 {
-    font-size: 2.8rem;
+.hero-content h1 {
+    font-size: 2.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #fff, #b8b8ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     letter-spacing: -0.02em;
 }
 
-/* Tagline Container - BAGO */
+/* Tagline Container */
 .tagline-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
     margin-bottom: 20px;
     background: rgba(124,58,237,0.1);
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 50px;
     width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.tagline-icon {
+.tagline-container i {
     color: #7c3aed;
     font-size: 0.8rem;
+    opacity: 0.7;
 }
 
-.short-bio {
+.tagline-container p {
     font-size: 0.9rem;
     color: #c5c5ff;
     font-weight: 400;
@@ -164,10 +168,11 @@ body {
 .role-wrap {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #a5a5ff;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
 .role-text {
@@ -183,46 +188,47 @@ body {
     50% { opacity: 0; }
 }
 
-/* Hero Stats - NASA KANAN NA */
-.hero-stats {
+/* Badge Group */
+.badge-group {
     display: flex;
-    gap: 20px;
-    margin-bottom: 28px;
+    gap: 12px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.stat-item {
+.badge {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     padding: 8px 20px;
     border-radius: 40px;
     font-size: 0.85rem;
     font-weight: 500;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: all 0.3s;
 }
 
-.stat-item i {
+.badge i {
     color: #7c3aed;
-    font-size: 0.9rem;
 }
 
-.stat-item:hover {
+.badge:hover {
     border-color: #7c3aed;
     transform: translateY(-2px);
 }
 
 .btn-group {
     display: flex;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-grad {
     background: linear-gradient(135deg, #7c3aed, #ec4899);
-    padding: 10px 24px;
+    padding: 12px 28px;
     border-radius: 40px;
     text-decoration: none;
     color: white;
@@ -242,7 +248,7 @@ body {
 .btn-out {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.15);
-    padding: 10px 24px;
+    padding: 12px 28px;
     border-radius: 40px;
     text-decoration: none;
     color: white;
@@ -582,13 +588,6 @@ footer i {
 
 /* Responsive */
 @media (max-width: 1000px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-        padding: 30px;
-    }
-    
     .main-card {
         grid-template-columns: 1fr;
     }
@@ -601,20 +600,13 @@ footer i {
         grid-template-columns: 1fr;
     }
     
-    .hero-right h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-stats {
-        justify-content: center;
-    }
-    
-    .btn-group {
-        justify-content: center;
+    .hero-content h1 {
+        font-size: 1.8rem;
     }
     
     .tagline-container {
-        margin: 0 auto 20px auto;
+        flex-direction: column;
+        text-align: center;
     }
     
     .wrapper {
