@@ -1,30 +1,30 @@
 // Image Upload
-const imageUpload = document.getElementById('imageUpload');
-const profileImage = document.getElementById('profileImage');
-const uploadStatus = document.getElementById('uploadStatus');
+const uploadInput = document.getElementById('uploadInput');
+const profileImg = document.getElementById('profileImg');
+const uploadMsg = document.getElementById('uploadMsg');
 
-const savedPhoto = localStorage.getItem('savedPhoto');
-if (savedPhoto && profileImage) {
-    profileImage.src = savedPhoto;
+const savedImg = localStorage.getItem('savedProfileImg');
+if (savedImg && profileImg) {
+    profileImg.src = savedImg;
 }
 
-if (imageUpload) {
-    imageUpload.addEventListener('change', function(e) {
+if (uploadInput) {
+    uploadInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
             if (file.size > 2 * 1024 * 1024) {
-                uploadStatus.innerHTML = '❌ File too large (max 2MB)';
-                uploadStatus.style.color = '#ff6b6b';
-                setTimeout(() => uploadStatus.innerHTML = '', 3000);
+                uploadMsg.innerHTML = '❌ Max 2MB only';
+                uploadMsg.style.color = '#ff6b6b';
+                setTimeout(() => uploadMsg.innerHTML = '', 3000);
                 return;
             }
             const reader = new FileReader();
             reader.onload = function(e) {
-                profileImage.src = e.target.result;
-                localStorage.setItem('savedPhoto', e.target.result);
-                uploadStatus.innerHTML = '✅ Profile updated!';
-                uploadStatus.style.color = '#4ecdc4';
-                setTimeout(() => uploadStatus.innerHTML = '', 3000);
+                profileImg.src = e.target.result;
+                localStorage.setItem('savedProfileImg', e.target.result);
+                uploadMsg.innerHTML = '✅ Profile updated!';
+                uploadMsg.style.color = '#4ecdc4';
+                setTimeout(() => uploadMsg.innerHTML = '', 3000);
             };
             reader.readAsDataURL(file);
         }
@@ -33,36 +33,36 @@ if (imageUpload) {
 
 // Typing Animation
 const roles = ['Web Developer', 'Graphic Designer', 'IT Graduate'];
-let roleIndex = 0, charIndex = 0, isDeleting = false;
-const typedText = document.querySelector('.typed-text');
+let roleIdx = 0, charIdx = 0, deleting = false;
+const roleText = document.getElementById('roleText');
 
-function typeEffect() {
-    if (!typedText) return;
-    const current = roles[roleIndex];
-    if (isDeleting) {
-        typedText.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
+function typeRole() {
+    if (!roleText) return;
+    const current = roles[roleIdx];
+    if (deleting) {
+        roleText.textContent = current.substring(0, charIdx - 1);
+        charIdx--;
     } else {
-        typedText.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
+        roleText.textContent = current.substring(0, charIdx + 1);
+        charIdx++;
     }
-    if (!isDeleting && charIndex === current.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 2000);
+    if (!deleting && charIdx === current.length) {
+        deleting = true;
+        setTimeout(typeRole, 2000);
         return;
     }
-    if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeEffect, 500);
+    if (deleting && charIdx === 0) {
+        deleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        setTimeout(typeRole, 500);
         return;
     }
-    setTimeout(typeEffect, isDeleting ? 100 : 150);
+    setTimeout(typeRole, deleting ? 80 : 120);
 }
-setTimeout(typeEffect, 500);
+setTimeout(typeRole, 500);
 
 // Scroll Reveal
-const revealObserver = new IntersectionObserver((entries) => {
+const reveal = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -71,9 +71,9 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.info-block, .project-item, .achievement-item').forEach(el => {
+document.querySelectorAll('.info-card, .project, .achievement').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.5s ease';
-    revealObserver.observe(el);
+    reveal.observe(el);
 });
