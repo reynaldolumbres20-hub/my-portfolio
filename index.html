@@ -3,67 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reynaldo B. Lumbres | Premium Portfolio</title>
+    <title>Reynaldo B. Lumbres | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Gradient Background -->
+    <div class="animated-bg">
+        <div class="gradient-1"></div>
+        <div class="gradient-2"></div>
+        <div class="gradient-3"></div>
+    </div>
+
     <div class="container">
         <!-- Hero Section -->
-        <header class="hero-section">
-            <div class="hero-content">
+        <div class="hero-section">
+            <div class="hero-left">
                 <div class="profile-wrapper">
-                    <div class="profile-frame">
-                        <img id="profileImage" src="images/profile.jpg" alt="Reynaldo Lumbres" onerror="this.src='https://via.placeholder.com/200/d4d4d4/333?text=RBL'">
-                        <div class="upload-btn">
-                            <label for="imageUpload" class="camera-icon"><i class="fas fa-camera"></i></label>
-                            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
-                        </div>
+                    <div class="profile-glow"></div>
+                    <img id="profileImage" src="images/profile.jpg" alt="Profile" onerror="this.src='https://ui-avatars.com/api/?background=6366f1&color=fff&name=Reynaldo+Lumbres'">
+                    <div class="upload-btn">
+                        <label for="imageUpload"><i class="fas fa-camera"></i></label>
+                        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
                     </div>
-                    <div class="status-badge" id="uploadStatus"></div>
                 </div>
-                <div class="hero-text">
-                    <h1 class="premium-title">Reynaldo B. Lumbres</h1>
-                    <div class="typed-container">
-                        <span class="typed-text"></span>
-                        <span class="cursor-blink">|</span>
-                    </div>
-                    <div class="hero-badges">
-                        <span class="badge"><i class="fas fa-code"></i> Web Developer</span>
-                        <span class="badge"><i class="fas fa-paint-brush"></i> Graphic Designer</span>
-                        <span class="badge"><i class="fas fa-graduation-cap"></i> IT Graduate</span>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn-primary-premium"><i class="fas fa-download"></i> Download CV</a>
-                        <a href="#projects" class="btn-outline-premium"><i class="fas fa-project-diagram"></i> View Work</a>
-                    </div>
+                <div id="uploadStatus" class="upload-status"></div>
+            </div>
+            <div class="hero-right">
+                <h1 class="glow-text">Reynaldo B. Lumbres</h1>
+                <div class="typing-wrapper">
+                    <span class="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <div class="badges">
+                    <span><i class="fas fa-code"></i> Web Dev</span>
+                    <span><i class="fas fa-palette"></i> Designer</span>
+                    <span><i class="fas fa-graduation-cap"></i> IT Graduate</span>
+                </div>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">Contact Me <i class="fas fa-arrow-right"></i></a>
+                    <a href="#projects" class="btn-outline">View Work <i class="fas fa-eye"></i></a>
                 </div>
             </div>
-        </header>
-
-        <!-- Stats Section -->
-        <div class="stats-row">
-            <div class="stat-card"><i class="fas fa-code"></i><span class="stat-number" data-count="15">0</span><span class="stat-label">Projects</span></div>
-            <div class="stat-card"><i class="fas fa-clock"></i><span class="stat-number" data-count="3">0</span><span class="stat-label">Years Exp</span></div>
-            <div class="stat-card"><i class="fas fa-users"></i><span class="stat-number" data-count="12">0</span><span class="stat-label">Happy Clients</span></div>
-            <div class="stat-card"><i class="fas fa-trophy"></i><span class="stat-number" data-count="8">0</span><span class="stat-label">Achievements</span></div>
         </div>
 
-        <!-- Main Grid -->
-        <div class="premium-grid">
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <i class="fas fa-code"></i>
+                <span class="stat-num" data-count="15">0</span>
+                <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <span class="stat-num" data-count="3">0</span>
+                <span class="stat-label">Years Exp</span>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <span class="stat-num" data-count="12">0</span>
+                <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <span class="stat-num" data-count="8">0</span>
+                <span class="stat-label">Awards</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-grid">
             <!-- LEFT COLUMN -->
-            <div class="grid-left">
-                <div class="premium-card">
+            <div class="left-col">
+                <div class="glass-card">
                     <div class="card-header"><i class="fas fa-address-card"></i><h3>Contact</h3></div>
                     <div class="card-body">
-                        <div class="contact-info"><i class="fas fa-phone"></i><span>+63 970 550 8581</span></div>
-                        <div class="contact-info"><i class="fas fa-envelope"></i><span>reynaldolumbres20@gmail.com</span></div>
-                        <div class="contact-info"><i class="fab fa-facebook"></i><span>Reynaldo_Lumbres@yahoo.com</span></div>
-                        <div class="contact-info"><i class="fas fa-map-marker-alt"></i><span>Sta. Cruz, Santa Rosa, Laguna</span></div>
+                        <div class="contact-item"><i class="fas fa-phone"></i> 0970-550-8581</div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i> reynaldolumbres20@gmail.com</div>
+                        <div class="contact-item"><i class="fab fa-facebook"></i> Reynaldo_Lumbres@yahoo.com</div>
+                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Santa Rosa, Laguna</div>
                     </div>
                 </div>
 
-                <div class="premium-card">
+                <div class="glass-card">
                     <div class="card-header"><i class="fas fa-user"></i><h3>Personal Info</h3></div>
                     <div class="card-body info-grid">
                         <div><span>Age</span><strong>26</strong></div>
@@ -73,112 +95,124 @@
                     </div>
                 </div>
 
-                <div class="premium-card">
+                <div class="glass-card">
                     <div class="card-header"><i class="fas fa-language"></i><h3>Languages</h3></div>
                     <div class="card-body">
-                        <div class="skill-progress"><span>Filipino</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div></div>
-                        <div class="skill-progress"><span>English</span><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div>
+                        <div class="lang-item"><span>Filipino</span><div class="lang-bar"><div style="width:100%"></div></div></div>
+                        <div class="lang-item"><span>English</span><div class="lang-bar"><div style="width:85%"></div></div></div>
                     </div>
                 </div>
 
-                <div class="premium-card">
-                    <div class="card-header"><i class="fas fa-laptop-code"></i><h3>Technical Skills</h3></div>
+                <div class="glass-card">
+                    <div class="card-header"><i class="fas fa-laptop-code"></i><h3>Tech Skills</h3></div>
                     <div class="card-body skills-wrapper">
-                        <div class="skill-chip"><i class="fab fa-html5"></i>HTML5</div>
-                        <div class="skill-chip"><i class="fab fa-css3-alt"></i>CSS3</div>
-                        <div class="skill-chip"><i class="fab fa-js"></i>JavaScript</div>
-                        <div class="skill-chip"><i class="fab fa-react"></i>React</div>
-                        <div class="skill-chip"><i class="fab fa-php"></i>PHP</div>
-                        <div class="skill-chip"><i class="fab fa-github"></i>GitHub</div>
-                        <div class="skill-chip"><i class="fas fa-database"></i>MySQL</div>
-                        <div class="skill-chip"><i class="fab fa-microsoft"></i>VB.NET</div>
-                        <div class="skill-chip"><i class="fas fa-code"></i>C#</div>
-                        <div class="skill-chip"><i class="fas fa-tools"></i>PC Troubleshooting</div>
-                        <div class="skill-chip"><i class="fas fa-chart-line"></i>MS Office</div>
+                        <span class="skill"><i class="fab fa-html5"></i>HTML5</span>
+                        <span class="skill"><i class="fab fa-css3-alt"></i>CSS3</span>
+                        <span class="skill"><i class="fab fa-js"></i>JavaScript</span>
+                        <span class="skill"><i class="fab fa-react"></i>React</span>
+                        <span class="skill"><i class="fab fa-php"></i>PHP</span>
+                        <span class="skill"><i class="fab fa-github"></i>GitHub</span>
+                        <span class="skill"><i class="fas fa-database"></i>MySQL</span>
+                        <span class="skill"><i class="fas fa-code"></i>C#</span>
+                        <span class="skill"><i class="fab fa-microsoft"></i>VB.NET</span>
                     </div>
                 </div>
             </div>
 
             <!-- RIGHT COLUMN -->
-            <div class="grid-right">
-                <div class="premium-card">
+            <div class="right-col">
+                <div class="glass-card">
                     <div class="card-header"><i class="fas fa-bullseye"></i><h3>Objective</h3></div>
-                    <div class="card-body"><p class="objective-text">Motivated IT graduate and aspiring Web Developer & Graphic Designer seeking an entry-level role to apply front-end development, UI/UX, and visual design skills. Eager to contribute creativity, technical knowledge, and a strong work ethic.</p></div>
-                </div>
-
-                <div class="premium-card">
-                    <div class="card-header"><i class="fas fa-briefcase"></i><h3>Work Experience</h3></div>
-                    <div class="card-body timeline">
-                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Jollibee Commercial Complex</h4><p class="timeline-date">2022 – 2023</p><p>Service Crew - Customer service, food preparation, inventory tasks, store cleanliness</p></div></div>
-                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Chick N' Juicy</h4><p class="timeline-date">2023 – 2024</p><p>Service Crew - Dine-in operations, take-out orders, quality control, food preparation</p></div></div>
+                    <div class="card-body">
+                        <p>Motivated IT graduate seeking entry-level role in Web Development & Graphic Design. Eager to apply front-end development, UI/UX, and visual design skills with strong work ethic.</p>
                     </div>
                 </div>
 
-                <div class="premium-card">
+                <div class="glass-card">
+                    <div class="card-header"><i class="fas fa-briefcase"></i><h3>Experience</h3></div>
+                    <div class="card-body timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div><h4>Jollibee Commercial Complex</h4><span class="date">2022 - 2023</span><p>Service Crew - Customer service, food prep, inventory</p></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div><h4>Chick N' Juicy</h4><span class="date">2023 - 2024</span><p>Service Crew - Dine-in, take-out, quality control</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
                     <div class="card-header"><i class="fas fa-graduation-cap"></i><h3>Education</h3></div>
-                    <div class="card-body timeline">
-                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Bachelor of Science in Information Technology (BSIT)</h4><p class="timeline-date">Trimex Colleges | 2025 - 2026</p></div></div>
-                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Senior High School</h4><p class="timeline-date">Green Field Integrated School | 2019 - 2020</p></div></div>
-                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Junior High School</h4><p class="timeline-date">Pulong Sta. Cruz National High School | 2010 - 2011</p></div></div>
-                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Elementary</h4><p class="timeline-date">Bagong Tanyag Taguig Elementary School | 2010 - 2011</p></div></div>
+                    <div class="card-body">
+                        <div class="edu-item"><h4>BS Information Technology</h4><span>Trimex Colleges | 2025 - 2026</span></div>
+                        <div class="edu-item"><h4>Senior High School</h4><span>Green Field Integrated School | 2019 - 2020</span></div>
+                        <div class="edu-item"><h4>Junior High School</h4><span>Pulong Sta. Cruz NHS | 2010 - 2011</span></div>
+                        <div class="edu-item"><h4>Elementary</h4><span>Bagong Tanyag Elementary | 2010 - 2011</span></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Featured Projects Row (2 cards magkatabi) -->
+        <!-- Projects Section -->
         <div class="section-title">
-            <h2><i class="fas fa-star"></i> Featured Projects</h2>
-            <div class="title-line"></div>
+            <h2><i class="fas fa-star-of-life"></i> Featured Projects</h2>
+            <div class="line"></div>
         </div>
-        <div class="double-row">
-            <div class="premium-card full-card" id="projects">
-                <div class="card-header"><i class="fas fa-project-diagram"></i><h3>Web Development Projects</h3></div>
-                <div class="card-body projects-grid">
-                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Automated Registration System</h4><p>With Gmail Integration</p></div></div>
-                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Web Based Payroll System</h4><p>Attendance Management System</p></div></div>
-                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Gym Management System</h4><p>Real-time with Max Heap Priority Queue</p></div></div>
-                </div>
+        <div class="projects-section">
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+                <div><h3>Automated Registration System</h3><p>With Gmail Integration</p></div>
             </div>
-
-            <div class="premium-card full-card">
-                <div class="card-header"><i class="fas fa-mobile-alt"></i><h3>Mobile & Desktop Projects</h3></div>
-                <div class="card-body projects-grid">
-                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>E-Commerce Mobile App</h4><p>React Native with Firebase</p></div></div>
-                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Inventory Management System</h4><p>Desktop App using C# and SQL</p></div></div>
-                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Portfolio Website</h4><p>Responsive with Modern Design</p></div></div>
-                </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+                <div><h3>Web Based Payroll System</h3><p>Attendance Management</p></div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+                <div><h3>Gym Management System</h3><p>Real-time with Priority Queue</p></div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+                <div><h3>E-Commerce Mobile App</h3><p>React Native + Firebase</p></div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+                <div><h3>Inventory Management</h3><p>Desktop App with C# & SQL</p></div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-check-circle"></i></div>
+                <div><h3>Portfolio Website</h3><p>Modern Responsive Design</p></div>
             </div>
         </div>
 
-        <!-- Achievements & Certifications Row (2 cards magkatabi) -->
+        <!-- Achievements Section -->
         <div class="section-title">
             <h2><i class="fas fa-trophy"></i> Achievements & Certifications</h2>
-            <div class="title-line"></div>
+            <div class="line"></div>
         </div>
-        <div class="double-row">
-            <div class="premium-card full-card">
-                <div class="card-header"><i class="fas fa-award"></i><h3>Certifications</h3></div>
-                <div class="card-body achievements-list">
-                    <div class="achievement-premium"><i class="fas fa-certificate"></i><div><h4>NSTP Certificate of Completion</h4><p>May 6, 2023 | Jabez Camp Site, Dasmarinas, Cavite</p><p class="achievement-desc">Completed the National Service Training Program</p></div></div>
-                    <div class="achievement-premium"><i class="fas fa-certificate"></i><div><h4>Certificate of Participation – 3rd ISITE Conference</h4><p>March 17, 2023 | Lyceum of the Philippines University – Laguna</p><p class="achievement-desc">"Developing Industry Skills and Technological Advancement through Research"</p></div></div>
-                    <div class="achievement-premium"><i class="fas fa-certificate"></i><div><h4>Web Development Bootcamp</h4><p>2024 | Online Certification</p><p class="achievement-desc">Full Stack Web Development with React</p></div></div>
-                </div>
+        <div class="achievements-section">
+            <div class="achievement-card">
+                <i class="fas fa-certificate"></i>
+                <div><h3>NSTP Certificate of Completion</h3><p>May 6, 2023 | Jabez Camp Site, Cavite</p></div>
             </div>
-
-            <div class="premium-card full-card">
-                <div class="card-header"><i class="fas fa-medal"></i><h3>Awards & Recognitions</h3></div>
-                <div class="card-body achievements-list">
-                    <div class="achievement-premium"><i class="fas fa-medal"></i><div><h4>Best Capstone Project</h4><p>2026 | Trimex Colleges</p><p class="achievement-desc">Automated Registration and Referral Management System</p></div></div>
-                    <div class="achievement-premium"><i class="fas fa-medal"></i><div><h4>Dean's Lister</h4><p>2025 - 2026 | First Semester</p><p class="achievement-desc">Academic Excellence Award</p></div></div>
-                    <div class="achievement-premium"><i class="fas fa-medal"></i><div><h4>Leadership Award</h4><p>2023 | NSTP Program</p><p class="achievement-desc">Outstanding Leadership and Service</p></div></div>
-                </div>
+            <div class="achievement-card">
+                <i class="fas fa-certificate"></i>
+                <div><h3>ISITE Conference Participation</h3><p>March 17, 2023 | Lyceum University</p></div>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-medal"></i>
+                <div><h3>Best Capstone Project</h3><p>2026 | Trimex Colleges</p></div>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-medal"></i>
+                <div><h3>Dean's Lister</h3><p>1st Sem 2025-2026</p></div>
             </div>
         </div>
 
         <!-- Footer -->
-        <footer id="contact">
-            <p>© 2025 Reynaldo B. Lumbres. All rights reserved. | Built with <i class="fas fa-heart"></i> for excellence</p>
+        <footer>
+            <p>© 2025 Reynaldo B. Lumbres | Built with <i class="fas fa-heart"></i> for excellence</p>
         </footer>
     </div>
 
