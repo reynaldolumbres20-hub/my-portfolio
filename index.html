@@ -8,9 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-bg"></div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+    </div>
+
     <div class="container">
-        <!-- Header -->
-        <header>
+        <!-- Header with fade-in -->
+        <header class="fade-in">
             <div class="profile-container">
                 <div class="profile-img-wrapper">
                     <img id="profileImage" src="https://via.placeholder.com/200/6c63ff/white?text=RBL" alt="Reynaldo Lumbres">
@@ -19,9 +27,9 @@
                         <input type="file" id="imageUpload" accept="image/*" style="display: none;">
                     </div>
                 </div>
-                <h1>Reynaldo B. Lumbres</h1>
-                <p class="title">IT Graduate | Web Developer | Graphic Designer</p>
-                <div class="cta-buttons">
+                <h1 class="slide-up">Reynaldo B. Lumbres</h1>
+                <p class="title slide-up delay-1">IT Graduate | Web Developer | Graphic Designer</p>
+                <div class="cta-buttons slide-up delay-2">
                     <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
                     <a href="#projects" class="btn btn-outline"><i class="fas fa-code"></i> View Projects</a>
                 </div>
@@ -34,7 +42,7 @@
                 <!-- LEFT COLUMN -->
                 <div class="left-col">
                     <!-- Contact -->
-                    <div class="card">
+                    <div class="card fade-in-left">
                         <h3><i class="fas fa-address-card"></i> Contact</h3>
                         <div class="contact-item"><i class="fas fa-phone"></i> 0970-550-8581</div>
                         <div class="contact-item"><i class="fas fa-envelope"></i> reynaldolumbres20@gmail.com</div>
@@ -43,7 +51,7 @@
                     </div>
 
                     <!-- Personal Info -->
-                    <div class="card">
+                    <div class="card fade-in-left delay-1">
                         <h3><i class="fas fa-user"></i> Personal Info</h3>
                         <div class="info-row"><span>Age:</span> 25 years old</div>
                         <div class="info-row"><span>Birthday:</span> January 20, 2000</div>
@@ -52,7 +60,7 @@
                     </div>
 
                     <!-- Languages -->
-                    <div class="card">
+                    <div class="card fade-in-left delay-2">
                         <h3><i class="fas fa-language"></i> Languages</h3>
                         <div class="tags">
                             <span class="tag">Filipino</span>
@@ -61,7 +69,7 @@
                     </div>
 
                     <!-- Tech Skills -->
-                    <div class="card">
+                    <div class="card fade-in-left delay-3">
                         <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
                         <div class="tags">
                             <span class="tag">HTML5</span>
@@ -76,7 +84,7 @@
                     </div>
 
                     <!-- Soft Skills -->
-                    <div class="card">
+                    <div class="card fade-in-left delay-4">
                         <h3><i class="fas fa-heart"></i> Soft Skills</h3>
                         <div class="tags">
                             <span class="tag">Hardworking</span>
@@ -91,13 +99,13 @@
                 <!-- RIGHT COLUMN -->
                 <div class="right-col">
                     <!-- Objective -->
-                    <div class="card">
+                    <div class="card fade-in-right">
                         <h3><i class="fas fa-bullseye"></i> Objective</h3>
                         <p>Motivated IT graduate and aspiring Web Developer & Graphic Designer seeking an entry-level role to apply front-end development, UI/UX, and visual design skills. Eager to contribute creativity, technical knowledge, and a strong work ethic.</p>
                     </div>
 
                     <!-- Work Experience -->
-                    <div class="card">
+                    <div class="card fade-in-right delay-1">
                         <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
                         <div class="exp-item">
                             <div class="exp-header">
@@ -125,7 +133,7 @@
                     </div>
 
                     <!-- Education -->
-                    <div class="card">
+                    <div class="card fade-in-right delay-2">
                         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                         <div class="edu-item">
                             <div class="edu-title">Bachelor of Science in Information Technology (BSIT)</div>
@@ -146,7 +154,7 @@
                     </div>
 
                     <!-- Projects -->
-                    <div class="card" id="projects">
+                    <div class="card fade-in-right delay-3" id="projects">
                         <h3><i class="fas fa-project-diagram"></i> Projects</h3>
                         <div class="project-list">
                             <div class="project-item"><i class="fas fa-check-circle"></i> Automated Registration and Referral Management with Gmail Integration</div>
@@ -156,7 +164,7 @@
                     </div>
 
                     <!-- Achievements -->
-                    <div class="card">
+                    <div class="card fade-in-right delay-4">
                         <h3><i class="fas fa-trophy"></i> Achievements</h3>
                         <div class="achievement-item">
                             <div class="achieve-title">NSTP Certificate of Completion</div>
