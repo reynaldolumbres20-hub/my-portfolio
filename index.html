@@ -3,215 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reynaldo B. Lumbres | Professional Portfolio</title>
+    <title>Reynaldo B. Lumbres | Premium Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="gradient-bg"></div>
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
+    <!-- Premium Animated Background -->
+    <div class="premium-bg">
+        <div class="bg-overlay"></div>
+        <div class="particles"></div>
     </div>
 
-    <!-- MAANGAS NA FLYING DRAGONS with SVG -->
-    <div class="dragon-container">
-        <div class="dragon dragon1">
-            <svg class="dragon-svg" viewBox="0 0 200 150" width="120" height="90">
-                <defs>
-                    <linearGradient id="dragonGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="dragonGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#4a0080;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#1a0033;stop-opacity:1" />
-                    </linearGradient>
-                    <linearGradient id="dragonGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#006400;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#003300;stop-opacity:1" />
-                    </linearGradient>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                <!-- Dragon Body -->
-                <ellipse cx="100" cy="70" rx="45" ry="25" fill="url(#dragonGrad1)" filter="url(#glow)"/>
-                <!-- Dragon Head -->
-                <ellipse cx="150" cy="55" rx="25" ry="18" fill="url(#dragonGrad1)"/>
-                <!-- Dragon Eye -->
-                <circle cx="160" cy="50" r="4" fill="#ffff00"/>
-                <circle cx="161" cy="49" r="2" fill="#000"/>
-                <!-- Dragon Horns -->
-                <polygon points="165,40 175,25 170,42" fill="#ff6600"/>
-                <polygon points="155,38 160,22 158,40" fill="#ff6600"/>
-                <!-- Dragon Wings (Flapping) -->
-                <g class="wing left-wing">
-                    <path d="M70,60 Q40,30 20,50 Q30,60 50,65 Q35,50 50,55" fill="url(#dragonGrad1)" stroke="#ff4500" stroke-width="1"/>
-                </g>
-                <g class="wing right-wing">
-                    <path d="M130,60 Q100,20 80,40 Q90,55 110,60 Q95,45 110,50" fill="url(#dragonGrad1)" stroke="#ff4500" stroke-width="1"/>
-                </g>
-                <!-- Dragon Tail -->
-                <path d="M55,70 Q30,65 20,80 Q35,75 55,75" fill="url(#dragonGrad1)"/>
-                <!-- Fire/Smoke -->
-                <g class="fire">
-                    <ellipse cx="170" cy="58" rx="8" ry="5" fill="#ff6600" opacity="0.8"/>
-                    <ellipse cx="175" cy="56" rx="5" ry="3" fill="#ffff00" opacity="0.6"/>
-                </g>
-            </svg>
-        </div>
-        
-        <div class="dragon dragon2">
-            <svg class="dragon-svg" viewBox="0 0 200 150" width="140" height="105">
-                <ellipse cx="100" cy="70" rx="45" ry="25" fill="url(#dragonGrad2)" filter="url(#glow)"/>
-                <ellipse cx="150" cy="55" rx="25" ry="18" fill="url(#dragonGrad2)"/>
-                <circle cx="160" cy="50" r="4" fill="#ff4444"/>
-                <circle cx="161" cy="49" r="2" fill="#000"/>
-                <polygon points="165,40 175,25 170,42" fill="#ff00ff"/>
-                <polygon points="155,38 160,22 158,40" fill="#ff00ff"/>
-                <g class="wing left-wing">
-                    <path d="M70,60 Q40,20 15,45 Q25,60 45,65 Q30,45 50,55" fill="url(#dragonGrad2)"/>
-                </g>
-                <g class="wing right-wing">
-                    <path d="M130,60 Q100,10 75,35 Q85,55 105,60 Q90,40 110,50" fill="url(#dragonGrad2)"/>
-                </g>
-                <path d="M55,70 Q25,60 15,80 Q30,75 55,75" fill="url(#dragonGrad2)"/>
-                <g class="fire">
-                    <ellipse cx="170" cy="58" rx="10" ry="6" fill="#ff00ff" opacity="0.7"/>
-                    <ellipse cx="178" cy="55" rx="6" ry="4" fill="#ff66ff" opacity="0.5"/>
-                </g>
-            </svg>
-        </div>
-        
-        <div class="dragon dragon3">
-            <svg class="dragon-svg" viewBox="0 0 200 150" width="100" height="75">
-                <ellipse cx="100" cy="70" rx="45" ry="25" fill="url(#dragonGrad3)" filter="url(#glow)"/>
-                <ellipse cx="150" cy="55" rx="25" ry="18" fill="url(#dragonGrad3)"/>
-                <circle cx="160" cy="50" r="4" fill="#00ff00"/>
-                <circle cx="161" cy="49" r="2" fill="#000"/>
-                <polygon points="165,40 175,25 170,42" fill="#00ff66"/>
-                <polygon points="155,38 160,22 158,40" fill="#00ff66"/>
-                <g class="wing left-wing">
-                    <path d="M70,60 Q45,25 25,50 Q35,65 55,70 Q40,55 55,60" fill="url(#dragonGrad3)"/>
-                </g>
-                <g class="wing right-wing">
-                    <path d="M130,60 Q105,15 85,40 Q95,60 115,65 Q100,50 115,55" fill="url(#dragonGrad3)"/>
-                </g>
-                <path d="M55,70 Q30,60 15,80 Q35,75 55,75" fill="url(#dragonGrad3)"/>
-                <g class="fire">
-                    <ellipse cx="170" cy="58" rx="9" ry="5" fill="#00ff66" opacity="0.8"/>
-                    <ellipse cx="176" cy="56" rx="5" ry="3" fill="#88ff88" opacity="0.6"/>
-                </g>
-            </svg>
-        </div>
-        
-        <div class="dragon dragon4">
-            <svg class="dragon-svg" viewBox="0 0 200 150" width="130" height="95">
-                <ellipse cx="100" cy="70" rx="45" ry="25" fill="url(#dragonGrad1)" filter="url(#glow)"/>
-                <ellipse cx="150" cy="55" rx="25" ry="18" fill="url(#dragonGrad1)"/>
-                <circle cx="160" cy="50" r="4" fill="#ffff00"/>
-                <circle cx="161" cy="49" r="2" fill="#000"/>
-                <polygon points="165,40 175,25 170,42" fill="#ffaa00"/>
-                <polygon points="155,38 160,22 158,40" fill="#ffaa00"/>
-                <g class="wing left-wing">
-                    <path d="M70,60 Q38,28 18,48 Q28,62 48,67 Q33,50 50,57" fill="url(#dragonGrad1)"/>
-                </g>
-                <g class="wing right-wing">
-                    <path d="M130,60 Q98,12 78,38 Q88,58 108,63 Q93,48 110,53" fill="url(#dragonGrad1)"/>
-                </g>
-                <path d="M55,70 Q28,62 15,82 Q32,76 55,75" fill="url(#dragonGrad1)"/>
-                <g class="fire">
-                    <ellipse cx="170" cy="58" rx="11" ry="6" fill="#ffaa00" opacity="0.8"/>
-                    <ellipse cx="178" cy="55" rx="7" ry="4" fill="#ffdd44" opacity="0.5"/>
-                </g>
-            </svg>
-        </div>
-    </div>
-
-    <!-- REST NG IYONG PORTFOLIO (same as before) -->
     <div class="container">
-        <header class="fade-in">
-            <div class="profile-container">
-                <div class="profile-img-wrapper">
-                    <img id="profileImage" src="images/profile.jpg" alt="Reynaldo Lumbres" onerror="this.src='https://via.placeholder.com/200/6c63ff/white?text=RBL'">
-                    <div class="upload-btn-wrapper">
-                        <label for="imageUpload" class="camera-icon"><i class="fas fa-camera"></i></label>
-                        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="hero-content">
+                <div class="profile-wrapper">
+                    <div class="profile-frame">
+                        <img id="profileImage" src="images/profile.jpg" alt="Reynaldo Lumbres" onerror="this.src='https://via.placeholder.com/200/2d3561/white?text=RBL'">
+                        <div class="upload-btn-glow">
+                            <label for="imageUpload" class="glow-icon"><i class="fas fa-camera"></i></label>
+                            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                        </div>
                     </div>
+                    <div class="status-badge" id="uploadStatus"></div>
                 </div>
-                <div id="uploadStatus" class="upload-status"></div>
-                <h1 class="slide-up">Reynaldo B. Lumbres</h1>
-                <p class="title slide-up delay-1">IT Graduate | Web Developer | Graphic Designer</p>
-                <div class="cta-buttons slide-up delay-2">
-                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
-                    <a href="#projects" class="btn btn-outline"><i class="fas fa-code"></i> View Projects</a>
+                <div class="hero-text">
+                    <h1 class="premium-title">Reynaldo B. Lumbres</h1>
+                    <div class="typed-container">
+                        <span class="typed-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <div class="hero-badges">
+                        <span class="badge"><i class="fas fa-code"></i> Web Developer</span>
+                        <span class="badge"><i class="fas fa-paint-brush"></i> Graphic Designer</span>
+                        <span class="badge"><i class="fas fa-graduation-cap"></i> IT Graduate</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-premier"><i class="fas fa-download"></i> Download CV</a>
+                        <a href="#projects" class="btn-outline-premier"><i class="fas fa-project-diagram"></i> View Work</a>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main class="single-box-container">
-            <div class="left-col">
-                <div class="inner-card"><h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-phone"></i> 0970-550-8581</div>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> reynaldolumbres20@gmail.com</div>
-                    <div class="contact-item"><i class="fab fa-facebook"></i> Reynaldo_Lumbres@yahoo.com</div>
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Sta. Cruz, Santa Rosa City, Laguna</div>
-                </div>
-                <div class="inner-card"><h3><i class="fas fa-user"></i> Personal Info</h3>
-                    <div class="info-row"><span>Age:</span> 26 years old</div>
-                    <div class="info-row"><span>Birthday:</span> January 20, 2000</div>
-                    <div class="info-row"><span>Civil Status:</span> Single</div>
-                    <div class="info-row"><span>Nationality:</span> Filipino</div>
-                </div>
-                <div class="inner-card"><h3><i class="fas fa-language"></i> Languages</h3>
-                    <div class="tags"><span class="tag">Filipino</span><span class="tag">English</span></div>
-                </div>
-                <div class="inner-card"><h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
-                    <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">VB.NET</span><span class="tag">C#</span><span class="tag">MySQL</span><span class="tag">MS Office</span><span class="tag">PC Troubleshooting</span></div>
-                </div>
-                <div class="inner-card"><h3><i class="fas fa-heart"></i> Soft Skills</h3>
-                    <div class="tags"><span class="tag">Hardworking</span><span class="tag">Responsible</span><span class="tag">Punctual</span><span class="tag">Quick Learner</span><span class="tag">Team Player</span></div>
-                </div>
-            </div>
-            <div class="right-col">
-                <div class="inner-card"><h3><i class="fas fa-bullseye"></i> Objective</h3>
-                    <p>Motivated IT graduate and aspiring Web Developer & Graphic Designer seeking an entry-level role to apply front-end development, UI/UX, and visual design skills.</p>
-                </div>
-                <div class="inner-card"><h3><i class="fas fa-briefcase"></i> Work Experience</h3>
-                    <div class="exp-item"><div class="exp-header"><span class="exp-title">Jollibee Commercial Complex – Service Crew</span><span class="exp-date">2022 – 2023</span></div>
-                    <ul><li>Provided customer service and handled customer orders</li><li>Assisted in food preparation</li></ul></div>
-                    <div class="exp-item"><div class="exp-header"><span class="exp-title">Chick N' Juicy – Service Crew</span><span class="exp-date">2023 – 2024</span></div>
-                    <ul><li>Handled dine-in and take-out orders</li><li>Managed food preparation and quality control</li></ul></div>
-                </div>
-                <div class="inner-card"><h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="edu-item"><div class="edu-title">Bachelor of Science in Information Technology (BSIT)</div><div class="edu-school">Trimex Colleges | 2025 - 2026</div></div>
-                    <div class="edu-item"><div class="edu-title">Senior High School</div><div class="edu-school">Green Field Integrated School | 2019 - 2020</div></div>
-                    <div class="edu-item"><div class="edu-title">Junior High School</div><div class="edu-school">Pulong Sta. Cruz National High School | 2010 - 2011</div></div>
-                    <div class="edu-item"><div class="edu-title">Elementary</div><div class="edu-school">Bagong Tanyag Taguig Elementary School | 2010 - 2011</div></div>
-                </div>
-            </div>
-        </main>
+        <!-- Stats Section -->
+        <div class="stats-row">
+            <div class="stat-card"><i class="fas fa-code"></i><span class="stat-number" data-count="15">0</span><span class="stat-label">Projects</span></div>
+            <div class="stat-card"><i class="fas fa-clock"></i><span class="stat-number" data-count="3">0</span><span class="stat-label">Years Exp</span></div>
+            <div class="stat-card"><i class="fas fa-users"></i><span class="stat-number" data-count="12">0</span><span class="stat-label">Happy Clients</span></div>
+            <div class="stat-card"><i class="fas fa-trophy"></i><span class="stat-number" data-count="8">0</span><span class="stat-label">Achievements</span></div>
+        </div>
 
-        <div class="bottom-row">
-            <div class="inner-card projects-card" id="projects"><h3><i class="fas fa-project-diagram"></i> Projects</h3>
-                <div class="project-list"><div class="project-item"><i class="fas fa-check-circle"></i> Automated Registration and Referral Management with Gmail Integration</div>
-                <div class="project-item"><i class="fas fa-check-circle"></i> Web Based Payroll and Attendance Management System</div>
-                <div class="project-item"><i class="fas fa-check-circle"></i> Gymmate: Real Time Gym Management System Using Max Heap Priority Queue</div></div>
+        <!-- Main Grid -->
+        <div class="premium-grid">
+            <!-- Left Side -->
+            <div class="grid-left">
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-address-card"></i><h3>Contact</h3></div>
+                    <div class="card-body">
+                        <div class="contact-info"><i class="fas fa-phone"></i><span>+63 970 550 8581</span></div>
+                        <div class="contact-info"><i class="fas fa-envelope"></i><span>reynaldolumbres20@gmail.com</span></div>
+                        <div class="contact-info"><i class="fab fa-facebook"></i><span>Reynaldo_Lumbres@yahoo.com</span></div>
+                        <div class="contact-info"><i class="fas fa-map-marker-alt"></i><span>Sta. Cruz, Santa Rosa, Laguna</span></div>
+                    </div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-user"></i><h3>Personal Info</h3></div>
+                    <div class="card-body info-grid">
+                        <div><span>Age</span><strong>26</strong></div>
+                        <div><span>Birthday</span><strong>Jan 20, 2000</strong></div>
+                        <div><span>Status</span><strong>Single</strong></div>
+                        <div><span>Nationality</span><strong>Filipino</strong></div>
+                    </div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-language"></i><h3>Languages</h3></div>
+                    <div class="card-body"><div class="skill-progress"><span>Filipino</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div></div>
+                    <div class="skill-progress"><span>English</span><div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div></div></div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-laptop-code"></i><h3>Technical Skills</h3></div>
+                    <div class="card-body skills-wrapper">
+                        <div class="skill-chip"><i class="fab fa-html5"></i>HTML5</div>
+                        <div class="skill-chip"><i class="fab fa-css3-alt"></i>CSS3</div>
+                        <div class="skill-chip"><i class="fab fa-js"></i>JavaScript</div>
+                        <div class="skill-chip"><i class="fab fa-react"></i>React</div>
+                        <div class="skill-chip"><i class="fab fa-php"></i>PHP</div>
+                        <div class="skill-chip"><i class="fab fa-github"></i>GitHub</div>
+                        <div class="skill-chip"><i class="fas fa-database"></i>MySQL</div>
+                        <div class="skill-chip"><i class="fab fa-microsoft"></i>VB.NET</div>
+                        <div class="skill-chip"><i class="fas fa-code"></i>C#</div>
+                        <div class="skill-chip"><i class="fas fa-tools"></i>PC Troubleshooting</div>
+                        <div class="skill-chip"><i class="fas fa-chart-line"></i>MS Office</div>
+                    </div>
+                </div>
             </div>
-            <div class="inner-card achievements-card"><h3><i class="fas fa-trophy"></i> Achievements</h3>
-                <div class="achievement-item"><div class="achieve-title">NSTP Certificate of Completion</div><div class="achieve-date">May 6, 2023 | Jabez Camp Site, Dasmarinas, Cavite</div><p>Completed the National Service Training Program</p></div>
-                <div class="achievement-item"><div class="achieve-title">Certificate of Participation – 3rd ISITE Conference</div><div class="achieve-date">March 17, 2023 | Lyceum of the Philippines University – Laguna</div><p>Active participant in "Developing Industry Skills and Technological Advancement through Research"</p></div>
+
+            <!-- Right Side -->
+            <div class="grid-right">
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-bullseye"></i><h3>Objective</h3></div>
+                    <div class="card-body"><p class="objective-text">Motivated IT graduate and aspiring Web Developer & Graphic Designer seeking an entry-level role to apply front-end development, UI/UX, and visual design skills. Eager to contribute creativity, technical knowledge, and a strong work ethic.</p></div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-briefcase"></i><h3>Work Experience</h3></div>
+                    <div class="card-body timeline">
+                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Jollibee Commercial Complex</h4><p class="timeline-date">2022 – 2023</p><p>Service Crew - Customer service, food preparation, inventory tasks, store cleanliness</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Chick N' Juicy</h4><p class="timeline-date">2023 – 2024</p><p>Service Crew - Dine-in operations, take-out orders, quality control, food preparation</p></div></div>
+                    </div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header"><i class="fas fa-graduation-cap"></i><h3>Education</h3></div>
+                    <div class="card-body timeline">
+                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Bachelor of Science in Information Technology (BSIT)</h4><p class="timeline-date">Trimex Colleges | 2025 - 2026</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Senior High School</h4><p class="timeline-date">Green Field Integrated School | 2019 - 2020</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Junior High School</h4><p class="timeline-date">Pulong Sta. Cruz National High School | 2010 - 2011</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>Elementary</h4><p class="timeline-date">Bagong Tanyag Taguig Elementary School | 2010 - 2011</p></div></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <footer id="contact"><p>© 2025 Reynaldo B. Lumbres. All rights reserved.</p></footer>
+        <!-- Projects & Achievements Row -->
+        <div class="double-row">
+            <div class="premium-card full-card" id="projects">
+                <div class="card-header"><i class="fas fa-project-diagram"></i><h3>Featured Projects</h3></div>
+                <div class="card-body projects-grid">
+                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Automated Registration System</h4><p>With Gmail Integration</p></div></div>
+                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Web Based Payroll System</h4><p>Attendance Management System</p></div></div>
+                    <div class="project-card-premium"><i class="fas fa-check-circle"></i><div><h4>Gym Management System</h4><p>Real-time with Max Heap Priority Queue</p></div></div>
+                </div>
+            </div>
+
+            <div class="premium-card full-card">
+                <div class="card-header"><i class="fas fa-trophy"></i><h3>Achievements & Certifications</h3></div>
+                <div class="card-body achievements-list">
+                    <div class="achievement-premium"><i class="fas fa-award"></i><div><h4>NSTP Certificate of Completion</h4><p>May 6, 2023 | Jabez Camp Site, Dasmarinas, Cavite</p></div></div>
+                    <div class="achievement-premium"><i class="fas fa-award"></i><div><h4>Certificate of Participation – 3rd ISITE Conference</h4><p>March 17, 2023 | Lyceum of the Philippines University – Laguna</p><p class="achievement-desc">"Developing Industry Skills and Technological Advancement through Research"</p></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="contact">
+            <p>© 2025 Reynaldo B. Lumbres. All rights reserved.</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
