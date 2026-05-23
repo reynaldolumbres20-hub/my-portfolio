@@ -1,20 +1,17 @@
-// IMAGE UPLOAD - Local Save (sa browser/device mo lang)
+// ========== IMAGE UPLOAD ==========
 const imageUpload = document.getElementById('imageUpload');
 const profileImage = document.getElementById('profileImage');
 const uploadStatus = document.getElementById('uploadStatus');
 
-// Load saved image from localStorage
 const savedPhoto = localStorage.getItem('savedPhoto');
 if (savedPhoto && profileImage) {
     profileImage.src = savedPhoto;
 }
 
-// Handle image upload
 if (imageUpload) {
     imageUpload.addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
-            // Check file size (max 2MB)
             if (file.size > 2 * 1024 * 1024) {
                 uploadStatus.innerHTML = '❌ File too large! Max 2MB';
                 uploadStatus.style.color = '#ff6b6b';
@@ -22,7 +19,6 @@ if (imageUpload) {
                 return;
             }
             
-            // Check file type
             if (!file.type.match('image.*')) {
                 uploadStatus.innerHTML = '❌ Please select an image file!';
                 uploadStatus.style.color = '#ff6b6b';
@@ -43,33 +39,105 @@ if (imageUpload) {
     });
 }
 
-// Scroll Reveal Animation
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+// ========== TYPING ANIMATION ==========
+const roles = ['Web Developer', 'Graphic Designer', 'IT Graduate'];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typedTextElement = document.querySelector('.typed-text');
+
+function typeEffect() {
+    const currentRole = roles[roleIndex];
+    
+    if (isDeleting) {
+        typedTextElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typedTextElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 2000);
+        return;
+    }
+    
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeEffect, 500);
+        return;
+    }
+    
+    setTimeout(typeEffect, isDeleting ? 100 : 150);
+}
+
+if (typedTextElement) {
+    setTimeout(typeEffect, 500);
+}
+
+// ========== COUNTING STATS ANIMATION ==========
+const statNumbers = document.querySelectorAll('.stat-number');
+
+function animateNumbers() {
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        let current = 0;
+        const increment = target / 50;
+        
+        const updateNumber = () => {
+            current += increment;
+            if (current < target) {
+                stat.textContent = Math.floor(current);
+                requestAnimationFrame(updateNumber);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        updateNumber();
+    });
+}
+
+// Trigger stats when in view
+const observerOptions = { threshold: 0.5 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateX(0) translateY(0)';
+            animateNumbers();
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.inner-card, .projects-card, .achievements-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease-out';
-    observer.observe(card);
+const statsRow = document.querySelector('.stats-row');
+if (statsRow) {
+    observer.observe(statsRow);
+}
+
+// ========== SCROLL REVEAL ==========
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.premium-card, .stat-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease-out';
+    revealObserver.observe(el);
 });
 
-// Parallax effect on mouse move for circles
+// ========== PARALLAX EFFECT ==========
 document.addEventListener('mousemove', (e) => {
-    const circles = document.querySelectorAll('.circle1, .circle2, .circle3');
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-    circles.forEach((circle, index) => {
-        const speed = 20 + (index * 10);
-        const x = (mouseX - 0.5) * speed;
-        const y = (mouseY - 0.5) * speed;
-        circle.style.transform = `translate(${x}px, ${y}px)`;
-    });
+    const overlay = document.querySelector('.bg-overlay');
+    if (overlay) {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        overlay.style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+    }
 });
