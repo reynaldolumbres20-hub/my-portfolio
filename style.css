@@ -1,78 +1,641 @@
-/* ========== MAANGAS NA DRAGON ANIMATIONS ========== */
-.dragon-container {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* ========== PREMIUM BACKGROUND ========== */
+.premium-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
+    z-index: -2;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f0f1a 100%);
 }
 
-.dragon {
+.bg-overlay {
     position: absolute;
-    animation: flyAcross 25s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(255,69,0,0.5));
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(100,100,255,0.03) 0%, transparent 70%);
 }
 
-.dragon-svg {
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+}
+
+/* ========== CONTAINER ========== */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+    background: rgba(10,10,10,0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid #222;
+    border-radius: 40px;
+    padding: 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    transition: all 0.3s;
+}
+
+.hero-section:hover {
+    border-color: #333;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.profile-wrapper {
+    position: relative;
+}
+
+.profile-frame {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    padding: 4px;
+    background: #111;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.upload-btn-glow {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #1a1a1a;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid #444;
+}
+
+.upload-btn-glow:hover {
+    background: #252525;
+    transform: scale(1.1);
+    border-color: #666;
+}
+
+.glowing-icon {
+    color: #888;
+}
+
+.status-badge {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #555;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.premium-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+}
+
+.typed-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.typed-text {
+    font-size: 1.3rem;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.cursor-blink {
+    animation: blink 1s infinite;
+    color: #666;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #222;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.badge:hover {
+    border-color: #444;
+    background: rgba(255,255,255,0.06);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-premier {
+    background: #111;
+    border: 1px solid #333;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-premier:hover {
+    background: #1a1a1a;
+    border-color: #555;
+    transform: translateY(-2px);
+}
+
+.btn-outline-premier {
+    background: transparent;
+    border: 1px solid #333;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-outline-premier:hover {
+    border-color: #666;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========== STATS ROW ========== */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background: rgba(10,10,10,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid #222;
+    border-radius: 25px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    border-color: #444;
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #666;
+    margin-bottom: 12px;
     display: block;
 }
 
-/* Wing Flapping Animation */
-.left-wing, .right-wing {
-    animation: flapWings 0.3s ease-in-out infinite;
-    transform-origin: center;
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    display: block;
+    color: white;
 }
 
-.right-wing {
-    animation-delay: 0.15s;
+.stat-label {
+    font-size: 0.85rem;
+    color: #666;
+    letter-spacing: 1px;
 }
 
-@keyframes flapWings {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(0.6); }
+/* ========== PREMIUM GRID ========== */
+.premium-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 25px;
+    margin-bottom: 30px;
 }
 
-/* Fire/Smoke Animation */
-.fire {
-    animation: fireBreath 0.2s ease-in-out infinite alternate;
+/* ========== PREMIUM CARDS ========== */
+.premium-card {
+    background: rgba(10,10,10,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid #222;
+    border-radius: 28px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: all 0.3s;
 }
 
-@keyframes fireBreath {
-    from { opacity: 0.5; transform: scaleX(1); }
-    to { opacity: 1; transform: scaleX(1.3); }
+.premium-card:hover {
+    border-color: #333;
+    transform: translateY(-3px);
 }
 
-/* Dragon Glow Effect */
-.dragon-svg {
-    filter: drop-shadow(0 0 8px rgba(255,69,0,0.6));
-    animation: dragonGlow 2s ease-in-out infinite;
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 25px;
+    border-bottom: 1px solid #222;
+    background: rgba(0,0,0,0.3);
 }
 
-@keyframes dragonGlow {
-    0%, 100% { filter: drop-shadow(0 0 8px rgba(255,69,0,0.4)); }
-    50% { filter: drop-shadow(0 0 20px rgba(255,69,0,0.8)); }
+.card-header i {
+    font-size: 1.3rem;
+    color: #666;
 }
 
-/* Dragon Flying Paths */
-.dragon1 { top: 10%; left: -200px; animation-duration: 22s; animation-delay: 0s; }
-.dragon2 { top: 35%; left: -250px; animation-duration: 25s; animation-delay: 5s; }
-.dragon3 { top: 60%; left: -180px; animation-duration: 20s; animation-delay: 10s; }
-.dragon4 { top: 80%; left: -220px; animation-duration: 28s; animation-delay: 15s; }
-
-@keyframes flyAcross {
-    0% { transform: translateX(0) translateY(0) scale(1); opacity: 0; }
-    10% { opacity: 1; }
-    30% { transform: translateX(30vw) translateY(-20px) scale(1.1); }
-    60% { transform: translateX(65vw) translateY(15px) scale(0.9); }
-    90% { opacity: 1; }
-    100% { transform: translateX(110vw) translateY(-10px) scale(1); opacity: 0; }
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-/* Different speeds for each dragon */
-.dragon1 .left-wing, .dragon1 .right-wing { animation-duration: 0.25s; }
-.dragon2 .left-wing, .dragon2 .right-wing { animation-duration: 0.35s; }
-.dragon3 .left-wing, .dragon3 .right-wing { animation-duration: 0.3s; }
-.dragon4 .left-wing, .dragon4 .right-wing { animation-duration: 0.28s; }
+.card-body {
+    padding: 22px 25px;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+.contact-info i {
+    width: 24px;
+    color: #666;
+}
+
+.contact-info span {
+    word-break: break-all;
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-grid div {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+    padding-bottom: 8px;
+}
+
+.info-grid span {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.info-grid strong {
+    color: white;
+    font-weight: 600;
+}
+
+/* Skill Progress */
+.skill-progress {
+    margin-bottom: 18px;
+}
+
+.skill-progress span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.progress-bar {
+    background: #1a1a1a;
+    height: 6px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #444, #666);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s;
+}
+
+/* Skills Wrapper */
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-chip {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.skill-chip i {
+    font-size: 1rem;
+    color: #666;
+}
+
+.skill-chip:hover {
+    border-color: #555;
+    background: #181818;
+    transform: translateY(-2px);
+}
+
+/* Objective Text */
+.objective-text {
+    color: #bbb;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    background: #666;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.timeline-date {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    color: #999;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Double Row */
+.double-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.full-card {
+    margin-bottom: 0;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card-premium {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 16px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.project-card-premium:hover {
+    border-color: #333;
+    background: rgba(0,0,0,0.5);
+    transform: translateX(5px);
+}
+
+.project-card-premium i {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.project-card-premium h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.project-card-premium p {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Achievements List */
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.achievement-premium {
+    display: flex;
+    gap: 15px;
+    padding: 12px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 16px;
+    transition: all 0.3s;
+}
+
+.achievement-premium:hover {
+    background: rgba(0,0,0,0.5);
+    transform: translateX(5px);
+}
+
+.achievement-premium i {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.achievement-premium h4 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.achievement-premium p {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.achievement-desc {
+    font-style: italic;
+    margin-top: 5px;
+    color: #666 !important;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #222;
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .premium-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .double-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .premium-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-badges {
+        justify-content: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .hero-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+}
