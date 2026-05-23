@@ -2,13 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Reynaldo B. Lumbres | Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Background -->
+
+<!-- ========== TWO GATES WITH ANGEL WINGS ========== -->
+<div class="gates-container" id="gatesContainer">
+    <!-- Left Gate -->
+    <div class="gate-left">
+        <div class="angel-wing left-wing">
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+        </div>
+        <div class="gate-panel">
+            <div class="gate-handle left-handle"></div>
+            <div class="gate-number">I</div>
+        </div>
+    </div>
+    
+    <!-- Center Portal -->
+    <div class="gate-center">
+        <div class="gate-inscription">
+            <i class="fas fa-shield-alt"></i>
+            <h2>✦ THE PORTAL ✦</h2>
+            <p class="gate-question">Do you want to enter?</p>
+            <button id="openGatesBtn" class="gate-open-btn">
+                <i class="fas fa-door-open"></i> OPEN GATES
+            </button>
+            <p class="gate-hint">click to reveal the realm</p>
+        </div>
+    </div>
+    
+    <!-- Right Gate -->
+    <div class="gate-right">
+        <div class="angel-wing right-wing">
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+            <i class="fas fa-feather-alt"></i>
+        </div>
+        <div class="gate-panel">
+            <div class="gate-handle right-handle"></div>
+            <div class="gate-number">II</div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== MAIN PORTFOLIO CONTENT ========== -->
+<div class="main-content-wrapper" id="mainContentWrapper">
     <div class="bg-animation">
         <div class="bg-blur b1"></div>
         <div class="bg-blur b2"></div>
@@ -17,33 +73,21 @@
     </div>
 
     <div class="wrapper">
-        <!-- Hero Section - MAY KIDLAT EFFECT -->
         <div class="hero">
-            <!-- Lightning Effect Element -->
             <div class="lightning"></div>
             <div class="lightning bolt1"></div>
             <div class="lightning bolt2"></div>
             
             <div class="hero-grid">
-                <!-- Left: Avatar -->
                 <div class="hero-left">
                     <div class="avatar-frame">
                         <div class="avatar-glow"></div>
-                        <img id="profileImg" src="images/profile.jpg" alt="Profile" onerror="this.src='https://ui-avatars.com/api/?background=7c3aed&color=fff&name=Reynaldo+Lumbres&bold=true&size=200'">
-                        <div class="camera-overlay">
-                            <label for="uploadInput"><i class="fas fa-camera"></i></label>
-                            <input type="file" id="uploadInput" accept="image/*" hidden>
-                        </div>
+                        <img id="profileImg" src="images/profile.jpg" alt="Profile" onerror="this.src='https://ui-avatars.com/api/?background=1e3a5f&color=fff&name=Reynaldo+Lumbres&bold=true&size=200'">
                     </div>
-                    <div class="upload-msg" id="uploadMsg"></div>
                 </div>
                 
-                <!-- Right: Info -->
                 <div class="hero-right">
-                    <div class="name-badge">
-                        <span class="initial-badge">RL</span>
-                        <h1 class="name-title">Reynaldo B. Lumbres</h1>
-                    </div>
+                    <h1 class="name-title">Reynaldo B. Lumbres</h1>
                     
                     <div class="tagline-box">
                         <i class="fas fa-quote-left"></i>
@@ -51,14 +95,12 @@
                         <i class="fas fa-quote-right"></i>
                     </div>
                     
-                    <!-- Typing Animation -->
                     <div class="role-typing">
                         <span class="role-label">I'm a</span>
                         <span class="role-text" id="roleText"></span>
                         <span class="role-cursor">|</span>
                     </div>
                     
-                    <!-- Action Row - Isang Straight Line -->
                     <div class="action-row">
                         <span class="pill"><i class="fas fa-code"></i> Web Dev</span>
                         <span class="pill"><i class="fas fa-palette"></i> Designer</span>
@@ -70,7 +112,6 @@
             </div>
         </div>
 
-        <!-- Main Card -->
         <div class="main-card">
             <div class="card-left">
                 <div class="info-card">
@@ -113,6 +154,7 @@
                         <span class="skill"><i class="fas fa-database"></i> MySQL</span>
                         <span class="skill"><i class="fas fa-code"></i> C#</span>
                         <span class="skill"><i class="fab fa-microsoft"></i> VB.NET</span>
+                        <span class="skill"><i class="fas fa-paintbrush"></i> Canva/Photoshop</span>
                     </div>
                 </div>
             </div>
@@ -128,8 +170,9 @@
                 <div class="info-card">
                     <div class="info-header"><i class="fas fa-briefcase"></i><h3>Work Experience</h3></div>
                     <div class="info-body timeline">
-                        <div class="timeline-item"><div class="timeline-dot"></div><div><h4>Jollibee Commercial Complex</h4><span>2022 - 2023</span><p>Service Crew - Customer service, food prep, inventory</p></div></div>
-                        <div class="timeline-item"><div class="timeline-dot"></div><div><h4>Chick N' Juicy</h4><span>2023 - 2024</span><p>Service Crew - Dine-in, take-out, quality control</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div><h4>Freelance Web Developer & Graphic Designer</h4><span>2024 - 2025</span><p>Full development of web-based software applications, poster designs, logos, and system UI/UX. Created responsive websites and custom application interfaces for local clients.</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div><h4>Jollibee Commercial Complex</h4><span>2022 - 2023</span><p>Service Crew - Customer service, food prep, inventory management</p></div></div>
+                        <div class="timeline-item"><div class="timeline-dot"></div><div><h4>Chick N' Juicy</h4><span>2023 - 2024</span><p>Service Crew - Dine-in and take-out operations, quality control</p></div></div>
                     </div>
                 </div>
 
@@ -145,7 +188,6 @@
             </div>
         </div>
 
-        <!-- Projects Section -->
         <div class="section-block" id="projects">
             <div class="section-title">
                 <i class="fas fa-star-of-life"></i>
@@ -153,16 +195,15 @@
                 <div class="title-line"></div>
             </div>
             <div class="projects-grid">
-                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Automated Registration & Referral Management System</h4><p>With Gmail Integration</p></div></div>
-                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Web-Based Payroll System with Biometric H01H Model Integration</h4><p>Attendance & Payroll Management</p></div></div>
-                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Gym Management System</h4><p>Real-time with Priority Queue</p></div></div>
-                <div class="project"><i class="fas fa-check-circle"></i><div><h4>E-Commerce Mobile App</h4><p>React Native + Firebase</p></div></div>
-                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Inventory Management System</h4><p>Desktop App with C# & SQL</p></div></div>
-                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Portfolio Website</h4><p>Modern Responsive Design</p></div></div>
+                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Automated Registration & Referral System</h4><p class="project-type"><span class="type-badge software">💻 Software</span> With Gmail Integration</p></div></div>
+                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Web-Based Payroll System with Biometric</h4><p class="project-type"><span class="type-badge web">🌐 Web-based</span> <span class="type-badge hardware">🔧 Hardware</span> Attendance & Payroll</p></div></div>
+                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Gym Management System</h4><p class="project-type"><span class="type-badge web">🌐 Web-based</span> Real-time with Priority Queue</p></div></div>
+                <div class="project"><i class="fas fa-check-circle"></i><div><h4>E-Commerce Mobile App</h4><p class="project-type"><span class="type-badge web">🌐 Web-based</span> React Native + Firebase</p></div></div>
+                <div class="project"><i class="fas fa-check-circle"></i><div><h4>Inventory Management System</h4><p class="project-type"><span class="type-badge software">💻 Software</span> C# & SQL</p></div></div>
+                <div class="project"><i class="fas fa-check-circle"></i><div><h4>TRAPOS - Traffic Management System</h4><p class="project-type"><span class="type-badge software">💻 Software</span> <span class="type-badge hardware">🔧 Hardware</span> Sensor Logic</p></div></div>
             </div>
         </div>
 
-        <!-- Achievements Section -->
         <div class="section-block">
             <div class="section-title">
                 <i class="fas fa-trophy"></i>
@@ -173,7 +214,7 @@
                 <div class="achievement"><i class="fas fa-certificate"></i><div><h4>NSTP Certificate of Completion</h4><p>May 6, 2023 | Jabez Camp Site, Cavite</p></div></div>
                 <div class="achievement"><i class="fas fa-certificate"></i><div><h4>ISITE Conference Participation</h4><p>March 17, 2023 | Lyceum University</p></div></div>
                 <div class="achievement"><i class="fas fa-medal"></i><div><h4>Best Capstone Project</h4><p>2026 | Trimex Colleges</p></div></div>
-                <div class="achievement"><i class="fas fa-medal"></i><div><h4>Dean's Lister</h4><p>1st Sem 2025-2026</p></div></div>
+                <div class="achievement"><i class="fas fa-certificate"></i><div><h4>Freelance Web Development Certification</h4><p>2025 | Online Course</p></div></div>
             </div>
         </div>
 
@@ -181,7 +222,8 @@
             <p>© 2025 Reynaldo B. Lumbres | Designed with <i class="fas fa-heart"></i> for excellence</p>
         </footer>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
