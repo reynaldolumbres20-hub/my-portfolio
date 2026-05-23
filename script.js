@@ -1,38 +1,34 @@
-// ========== TWO GATES ENTRANCE SYSTEM ==========
-const gatesContainer = document.getElementById('gatesContainer');
+// ========== PROFESSIONAL GATE SYSTEM ==========
+const gateOverlay = document.getElementById('gateOverlay');
 const mainContent = document.getElementById('mainContentWrapper');
-const openGatesBtn = document.getElementById('openGatesBtn');
-const leftGate = document.querySelector('.gate-left');
-const rightGate = document.querySelector('.gate-right');
+const unlockBtn = document.getElementById('unlockGateBtn');
+const leftPanel = document.querySelector('.gate-left-panel');
+const rightPanel = document.querySelector('.gate-right-panel');
 
-function openGates() {
-    leftGate.classList.add('swing-open');
-    rightGate.classList.add('swing-open');
+function openGate() {
+    // Open the gate panels
+    leftPanel.classList.add('open');
+    rightPanel.classList.add('open');
     
+    // Wait for gate animation then hide overlay and show content
     setTimeout(() => {
-        gatesContainer.classList.add('hide-gates');
+        gateOverlay.classList.add('hide-gate');
         setTimeout(() => {
-            gatesContainer.style.display = 'none';
-        }, 500);
+            gateOverlay.style.display = 'none';
+        }, 800);
     }, 800);
     
+    // Reveal main content
     setTimeout(() => {
         mainContent.classList.add('reveal-main');
         startTypingAnimation();
         startScrollReveal();
-    }, 900);
+    }, 1000);
 }
 
-if (openGatesBtn) {
-    openGatesBtn.addEventListener('click', openGates);
+if (unlockBtn) {
+    unlockBtn.addEventListener('click', openGate);
 }
-
-document.querySelectorAll('.gate-handle').forEach(handle => {
-    handle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openGates();
-    });
-});
 
 // ========== TYPING ANIMATION ==========
 const roles = ['Web Developer', 'Graphic Designer', 'IT Graduate'];
@@ -93,7 +89,7 @@ function startScrollReveal() {
 }
 
 window.addEventListener('load', function() {
-    if (gatesContainer.style.display === 'none') {
+    if (gateOverlay.style.display === 'none') {
         startTypingAnimation();
         startScrollReveal();
     }
