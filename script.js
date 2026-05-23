@@ -13,7 +13,7 @@ if (uploadInput) {
         const file = e.target.files[0];
         if (file) {
             if (file.size > 2 * 1024 * 1024) {
-                uploadMsg.innerHTML = '❌ Max 2MB only';
+                uploadMsg.innerHTML = '❌ Max 2MB';
                 uploadMsg.style.color = '#ff6b6b';
                 setTimeout(() => uploadMsg.innerHTML = '', 3000);
                 return;
@@ -22,7 +22,7 @@ if (uploadInput) {
             reader.onload = function(e) {
                 profileImg.src = e.target.result;
                 localStorage.setItem('savedProfileImg', e.target.result);
-                uploadMsg.innerHTML = '✅ Profile updated!';
+                uploadMsg.innerHTML = '✅ Updated!';
                 uploadMsg.style.color = '#4ecdc4';
                 setTimeout(() => uploadMsg.innerHTML = '', 3000);
             };
