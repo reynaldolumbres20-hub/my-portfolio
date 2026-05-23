@@ -133,6 +133,17 @@ body {
     letter-spacing: -0.02em;
 }
 
+/* Short Bio */
+.short-bio {
+    font-size: 0.95rem;
+    color: #a5a5ff;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    border-left: 3px solid #7c3aed;
+    padding-left: 12px;
+}
+
 .role-wrap {
     display: flex;
     align-items: center;
@@ -570,6 +581,12 @@ footer i {
     
     .badge-group, .btn-group {
         justify-content: center;
+    }
+    
+    .short-bio {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
     }
     
     .wrapper {
