@@ -1,32 +1,50 @@
-// Image Upload
+// IMAGE UPLOAD - Local Save (sa browser/device mo lang)
 const imageUpload = document.getElementById('imageUpload');
 const profileImage = document.getElementById('profileImage');
+const uploadStatus = document.getElementById('uploadStatus');
 
+// Load saved image from localStorage
+const savedPhoto = localStorage.getItem('savedPhoto');
+if (savedPhoto && profileImage) {
+    profileImage.src = savedPhoto;
+}
+
+// Handle image upload
 if (imageUpload) {
     imageUpload.addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
+            // Check file size (max 2MB)
+            if (file.size > 2 * 1024 * 1024) {
+                uploadStatus.innerHTML = '❌ File too large! Max 2MB';
+                uploadStatus.style.color = '#ff6b6b';
+                setTimeout(() => { uploadStatus.innerHTML = ''; }, 3000);
+                return;
+            }
+            
+            // Check file type
+            if (!file.type.match('image.*')) {
+                uploadStatus.innerHTML = '❌ Please select an image file!';
+                uploadStatus.style.color = '#ff6b6b';
+                setTimeout(() => { uploadStatus.innerHTML = ''; }, 3000);
+                return;
+            }
+            
             const reader = new FileReader();
             reader.onload = function(e) {
                 profileImage.src = e.target.result;
                 localStorage.setItem('savedPhoto', e.target.result);
+                uploadStatus.innerHTML = '✅ Profile picture updated!';
+                uploadStatus.style.color = '#4ecdc4';
+                setTimeout(() => { uploadStatus.innerHTML = ''; }, 3000);
             };
             reader.readAsDataURL(file);
         }
     });
 }
 
-const savedPhoto = localStorage.getItem('savedPhoto');
-if (savedPhoto && profileImage) {
-    profileImage.src = savedPhoto;
-}
-
 // Scroll Reveal Animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -36,20 +54,18 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards for scroll animation
-document.querySelectorAll('.card').forEach(card => {
+document.querySelectorAll('.inner-card, .projects-card, .achievements-card').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'all 0.6s ease-out';
     observer.observe(card);
 });
 
-// Parallax effect on mouse move
+// Parallax effect on mouse move for circles
 document.addEventListener('mousemove', (e) => {
     const circles = document.querySelectorAll('.circle1, .circle2, .circle3');
     const mouseX = e.clientX / window.innerWidth;
     const mouseY = e.clientY / window.innerHeight;
-    
     circles.forEach((circle, index) => {
         const speed = 20 + (index * 10);
         const x = (mouseX - 0.5) * speed;
@@ -57,34 +73,3 @@ document.addEventListener('mousemove', (e) => {
         circle.style.transform = `translate(${x}px, ${y}px)`;
     });
 });
-
-// Add ripple effect to buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        ripple.style.position = 'absolute';
-        ripple.style.borderRadius = '50%';
-        ripple.style.backgroundColor = 'rgba(255,255,255,0.5)';
-        ripple.style.width = '10px';
-        ripple.style.height = '10px';
-        ripple.style.transform = 'translate(-50%, -50%)';
-        ripple.style.animation = 'ripple 0.6s linear';
-        const rect = this.getBoundingClientRect();
-        ripple.style.left = e.clientX - rect.left + 'px';
-        ripple.style.top = e.clientY - rect.top + 'px';
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-    });
-});
-
-// Add ripple keyframes dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        0% { width: 0; height: 0; opacity: 0.5; }
-        100% { width: 200px; height: 200px; opacity: 0; }
-    }
-`;
-document.head.appendChild(style);
