@@ -2,115 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Reynaldo B. Lumbres | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reynaldo B. Lumbres | Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
     <div class="container">
-        <!-- Header / Hero Section -->
-        <div class="hero-section">
-            <div class="profile-wrapper">
-                <div class="image-upload-area" id="uploadArea">
-                    <img id="profileImage" src="https://via.placeholder.com/300/2d3561/white?text=REYNALDO" alt="Profile Picture">
-                    <div class="upload-overlay">
-                        <label for="imageUpload" class="upload-btn"><i class="fas fa-camera"></i> Change Photo</label>
+        <!-- Header -->
+        <header>
+            <div class="profile-container">
+                <div class="profile-img-wrapper">
+                    <img id="profileImage" src="https://via.placeholder.com/200/6c63ff/white?text=RBL" alt="Reynaldo Lumbres">
+                    <div class="upload-btn-wrapper">
+                        <label for="imageUpload" class="camera-icon"><i class="fas fa-camera"></i></label>
                         <input type="file" id="imageUpload" accept="image/*" style="display: none;">
                     </div>
                 </div>
-            </div>
-            <div class="hero-content">
                 <h1>Reynaldo B. Lumbres</h1>
-                <p class="tagline">IT Graduate | Web Developer | Graphic Designer</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Contact Me</a>
-                    <a href="#projects" class="btn-secondary">View Projects</a>
+                <p class="title">IT Graduate | Web Developer | Graphic Designer</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    <a href="#projects" class="btn btn-outline"><i class="fas fa-code"></i> View Projects</a>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <div class="grid-2">
-            <!-- Left Column: Personal & Contact -->
-            <div class="left-col">
-                <!-- Contact Card -->
-                <div class="card">
-                    <h3><i class="fas fa-address-card"></i> Contact Details</h3>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-phone-alt"></i> 0970-550-8581</li>
-                        <li><i class="fas fa-envelope"></i> reynaldolumbres20@gmail.com</li>
-                        <li><i class="fab fa-facebook"></i> Reynaldo_Lumbres@yahoo.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Sta. Cruz, Santa Rosa City, Laguna</li>
-                    </ul>
-                </div>
+        <!-- Main Content -->
+        <main>
+            <div class="two-columns">
+                <!-- LEFT COLUMN -->
+                <div class="left-col">
+                    <!-- Contact -->
+                    <div class="card">
+                        <h3><i class="fas fa-address-card"></i> Contact</h3>
+                        <div class="contact-item"><i class="fas fa-phone"></i> 0970-550-8581</div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i> reynaldolumbres20@gmail.com</div>
+                        <div class="contact-item"><i class="fab fa-facebook"></i> Reynaldo_Lumbres@yahoo.com</div>
+                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Sta. Cruz, Santa Rosa City, Laguna</div>
+                    </div>
 
-                <!-- Personal Info Card -->
-                <div class="card">
-                    <h3><i class="fas fa-user-circle"></i> Personal Info</h3>
-                    <div class="info-grid">
-                        <div><strong>Age:</strong> 25 years old</div>
-                        <div><strong>Birthday:</strong> Jan 20, 2000</div>
-                        <div><strong>Civil Status:</strong> Single</div>
-                        <div><strong>Nationality:</strong> Filipino</div>
+                    <!-- Personal Info -->
+                    <div class="card">
+                        <h3><i class="fas fa-user"></i> Personal Info</h3>
+                        <div class="info-row"><span>Age:</span> 25 years old</div>
+                        <div class="info-row"><span>Birthday:</span> January 20, 2000</div>
+                        <div class="info-row"><span>Civil Status:</span> Single</div>
+                        <div class="info-row"><span>Nationality:</span> Filipino</div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="card">
+                        <h3><i class="fas fa-language"></i> Languages</h3>
+                        <div class="tags">
+                            <span class="tag">Filipino</span>
+                            <span class="tag">English</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Skills -->
+                    <div class="card">
+                        <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">VB.NET</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">MS Office</span>
+                            <span class="tag">PC Troubleshooting</span>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="card">
+                        <h3><i class="fas fa-heart"></i> Soft Skills</h3>
+                        <div class="tags">
+                            <span class="tag">Hardworking</span>
+                            <span class="tag">Responsible</span>
+                            <span class="tag">Punctual</span>
+                            <span class="tag">Quick Learner</span>
+                            <span class="tag">Team Player</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Languages Card -->
-                <div class="card">
-                    <h3><i class="fas fa-language"></i> Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Filipino</span>
-                        <span class="skill-tag">English</span>
+                <!-- RIGHT COLUMN -->
+                <div class="right-col">
+                    <!-- Objective -->
+                    <div class="card">
+                        <h3><i class="fas fa-bullseye"></i> Objective</h3>
+                        <p>Motivated IT graduate and aspiring Web Developer & Graphic Designer seeking an entry-level role to apply front-end development, UI/UX, and visual design skills. Eager to contribute creativity, technical knowledge, and a strong work ethic.</p>
                     </div>
-                </div>
 
-                <!-- Skills Card -->
-                <div class="card">
-                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">VB.NET</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MS Office</span>
-                        <span class="skill-tag">PC Troubleshooting</span>
-                    </div>
-                </div>
-
-                <!-- Soft Skills Card -->
-                <div class="card">
-                    <h3><i class="fas fa-heart"></i> Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Hardworking</span>
-                        <span class="skill-tag">Responsible</span>
-                        <span class="skill-tag">Punctual</span>
-                        <span class="skill-tag">Quick Learner</span>
-                        <span class="skill-tag">Team Player</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Experience, Education, Projects -->
-            <div class="right-col">
-                <!-- Objective -->
-                <div class="card">
-                    <h3><i class="fas fa-bullseye"></i> Objective</h3>
-                    <p>Motivated IT graduate and aspiring Web Developer & Graphic Designer seeking an entry-level role to apply front-end development, UI/UX, and visual design skills. Eager to contribute creativity, technical knowledge, and a strong work ethic.</p>
-                </div>
-
-                <!-- Work Experience -->
-                <div class="card">
-                    <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-title">Jollibee Commercial Complex – Service Crew</div>
-                            <div class="timeline-date">2022 – 2023</div>
+                    <!-- Work Experience -->
+                    <div class="card">
+                        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Jollibee Commercial Complex – Service Crew</span>
+                                <span class="exp-date">2022 – 2023</span>
+                            </div>
                             <ul>
                                 <li>Provided customer service and handled customer orders</li>
                                 <li>Assisted in food preparation</li>
@@ -118,9 +111,11 @@
                                 <li>Maintained store cleanliness</li>
                             </ul>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-title">Chick N’ Juicy – Service Crew</div>
-                            <div class="timeline-date">2023 – 2024</div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Chick N' Juicy – Service Crew</span>
+                                <span class="exp-date">2023 – 2024</span>
+                            </div>
                             <ul>
                                 <li>Handled dine-in and take-out orders</li>
                                 <li>Managed food preparation and quality control</li>
@@ -128,70 +123,60 @@
                             </ul>
                         </div>
                     </div>
-                </div>
 
-                <!-- Education -->
-                <div class="card">
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-title">Bachelor of Science in Information Technology (BSIT)</div>
-                            <div class="timeline-date">Trimex Colleges | 2021 - 2022</div>
+                    <!-- Education -->
+                    <div class="card">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-item">
+                            <div class="edu-title">Bachelor of Science in Information Technology (BSIT)</div>
+                            <div class="edu-school">Trimex Colleges | 2021 - 2022</div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-title">Senior High School</div>
-                            <div class="timeline-date">Green Field Integrated School | 2019 - 2020</div>
+                        <div class="edu-item">
+                            <div class="edu-title">Senior High School</div>
+                            <div class="edu-school">Green Field Integrated School | 2019 - 2020</div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-title">Junior High School</div>
-                            <div class="timeline-date">Pulong Sta. Cruz National High School | 2010 - 2011</div>
+                        <div class="edu-item">
+                            <div class="edu-title">Junior High School</div>
+                            <div class="edu-school">Pulong Sta. Cruz National High School | 2010 - 2011</div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-title">Elementary</div>
-                            <div class="timeline-date">Bagong Tanyag Taguig Elementary School | 2010 - 2011</div>
+                        <div class="edu-item">
+                            <div class="edu-title">Elementary</div>
+                            <div class="edu-school">Bagong Tanyag Taguig Elementary School | 2010 - 2011</div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Projects -->
-                <div class="card" id="projects">
-                    <h3><i class="fas fa-laptop-code"></i> Projects</h3>
-                    <div class="projects-list">
-                        <div class="project-item">
-                            <i class="fas fa-check-circle"></i> Automated Registration and Referral Management with Gmail Integration
-                        </div>
-                        <div class="project-item">
-                            <i class="fas fa-check-circle"></i> Design and Implementation of a Web Based Payroll and Attendance Management System
-                        </div>
-                        <div class="project-item">
-                            <i class="fas fa-check-circle"></i> Development of Gymmate: A Real Time Gym Management System Using Max Heap – Based Priority Queue
+                    <!-- Projects -->
+                    <div class="card" id="projects">
+                        <h3><i class="fas fa-project-diagram"></i> Projects</h3>
+                        <div class="project-list">
+                            <div class="project-item"><i class="fas fa-check-circle"></i> Automated Registration and Referral Management with Gmail Integration</div>
+                            <div class="project-item"><i class="fas fa-check-circle"></i> Web Based Payroll and Attendance Management System</div>
+                            <div class="project-item"><i class="fas fa-check-circle"></i> Gymmate: Real Time Gym Management System Using Max Heap Priority Queue</div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Achievements -->
-                <div class="card">
-                    <h3><i class="fas fa-trophy"></i> Achievements</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-title">NSTP Certificate of Completion</div>
-                            <div class="timeline-date">May 6, 2023 | Jabez Camp Site, Dasmarinas, Cavite</div>
+                    <!-- Achievements -->
+                    <div class="card">
+                        <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                        <div class="achievement-item">
+                            <div class="achieve-title">NSTP Certificate of Completion</div>
+                            <div class="achieve-date">May 6, 2023 | Jabez Camp Site, Dasmarinas, Cavite</div>
                             <p>Completed the National Service Training Program</p>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-title">Certificate of Participation – 3rd ISITE Conference</div>
-                            <div class="timeline-date">March 17, 2023 | Lyceum of the Philippines University – Laguna</div>
-                            <p>Active participant in “Developing Industry Skills and Technological Advancement through Research”</p>
+                        <div class="achievement-item">
+                            <div class="achieve-title">Certificate of Participation – 3rd ISITE Conference</div>
+                            <div class="achieve-date">March 17, 2023 | Lyceum of the Philippines University – Laguna</div>
+                            <p>Active participant in "Developing Industry Skills and Technological Advancement through Research"</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <!-- Footer / Contact -->
-        <div class="footer" id="contact">
+        <!-- Footer -->
+        <footer id="contact">
             <p>© 2025 Reynaldo B. Lumbres. All rights reserved.</p>
-        </div>
+        </footer>
     </div>
 
     <script src="script.js"></script>
