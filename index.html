@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Reynaldo B. Lumbres | Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -340,7 +340,7 @@
         }
         footer i { color: #ef4444; }
 
-        /* SERVICES MODAL - AYOS NA AYOS, KITA LAHAT NG BOX */
+        /* SERVICES MODAL - AYOS NA AYOS, CENTERED ANG MGA BOX SA MOBILE */
         .services-overlay {
             position: fixed;
             top: 0;
@@ -416,10 +416,14 @@
             padding-left: 16px;
             margin-bottom: 40px;
         }
+
+        /* ITO ANG PINAKA-IMPORTANTE - PARA CENTER ANG MGA BOX SA MOBILE */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 28px;
+            justify-items: center;
+            align-items: stretch;
         }
         .service-card {
             background: rgba(0, 0, 0, 0.55);
@@ -427,6 +431,9 @@
             padding: 24px 22px;
             transition: all 0.25s;
             border: 1px solid rgba(59,130,246,0.3);
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
         }
         .service-card:hover {
             transform: translateY(-6px);
@@ -464,6 +471,39 @@
             padding-top: 28px;
             font-size: 0.88rem;
             color: #c9dbff;
+        }
+
+        /* MOBILE VIEW - PARA LALO MAG-CENTER ANG MGA BOX */
+        @media (max-width: 768px) {
+            .services-overlay {
+                padding: 20px 16px;
+            }
+            .services-panel {
+                padding: 24px 20px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .services-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+            .service-card {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+            .services-title {
+                font-size: 1.4rem;
+                text-align: center;
+            }
+            .services-sub {
+                font-size: 0.85rem;
+                text-align: center;
+            }
         }
 
         @media (min-width: 768px) {
