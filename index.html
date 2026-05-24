@@ -19,9 +19,9 @@
             line-height: 1.5;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
         }
 
-        /* GATE OVERLAY */
         .gate-overlay {
             position: fixed;
             top: 0;
@@ -108,11 +108,9 @@
         .gate-unlock-btn:hover { transform: scale(1.02); gap: 14px; }
         .gate-footer { font-size: 0.65rem; color: #7f8ea3; margin-top: 18px; }
 
-        /* MAIN CONTENT */
         .main-content-wrapper { opacity: 0; transition: opacity 1s ease 0.3s; }
         .main-content-wrapper.reveal-main { opacity: 1; }
 
-        /* BG ANIMATION */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -147,7 +145,6 @@
             z-index: 2;
         }
 
-        /* HERO - WALANG RL BADGE */
         .hero {
             background: rgba(10, 14, 26, 0.6);
             backdrop-filter: blur(16px);
@@ -174,13 +171,18 @@
             gap: 8px;
             background: rgba(59,130,246,0.1);
             border-radius: 60px;
-            padding: 6px 16px;
+            padding: 8px 20px;
             margin: 12px auto;
             width: fit-content;
-            max-width: 90%;
-            border: 1px solid rgba(59,130,246,0.2);
+            max-width: 95%;
+            border: 1px solid rgba(59,130,246,0.3);
         }
-        .tagline-box p { font-size: 0.75rem; color: #b9d9ff; }
+        .tagline-box p { 
+            font-size: 0.8rem; 
+            color: #f0f5ff; 
+            font-weight: 500;
+            font-style: italic;
+        }
         .role-typing {
             display: flex;
             justify-content: center;
@@ -206,6 +208,10 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            background: transparent;
         }
         .pill {
             background: rgba(255,255,255,0.05);
@@ -217,8 +223,13 @@
         .btn-primary { background: #2563eb; color: white; box-shadow: 0 4px 12px #2563eb60; }
         .btn-secondary { background: transparent; border: 1px solid #4b5563; color: #e2e8f0; }
         .btn-pill:hover, .pill:hover { transform: translateY(-2px); }
+        .service-btn {
+            background: linear-gradient(95deg, #7c3aed, #4f46e5);
+            border: none;
+            box-shadow: 0 6px 14px #4f46e580;
+        }
+        .service-btn i { color: white; }
 
-        /* MAIN CARD */
         .main-card {
             display: flex;
             flex-direction: column;
@@ -244,59 +255,18 @@
         .info-header i { font-size: 1rem; color: #3b82f6; }
         .info-header h3 { font-size: 0.95rem; font-weight: 600; }
         .info-body { padding: 14px 18px; }
-        
-        /* OBJECTIVE TEXT JUSTIFIED */
-        .info-body p {
-            text-align: justify;
-            line-height: 1.55;
-            font-size: 0.85rem;
-            color: #e2e8f0;
-        }
-        
-        .info-line {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 0.85rem;
-            flex-wrap: wrap;
-        }
+        .info-body p { text-align: justify; line-height: 1.55; font-size: 0.85rem; color: #e2e8f0; }
+        .info-line { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; flex-wrap: wrap; }
         .info-line i { width: 24px; font-size: 0.9rem; color: #3b82f6; }
-        
-        /* PERSONAL INFO - AYOS NA AYOS */
-        .personal-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .personal-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .personal-label {
-            font-size: 0.8rem;
-            color: #9ca3af;
-            font-weight: 500;
-        }
-        .personal-value {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #f1f5f9;
-        }
-        
+        .personal-grid { display: flex; flex-direction: column; gap: 12px; }
+        .personal-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .personal-label { font-size: 0.8rem; color: #9ca3af; font-weight: 500; }
+        .personal-value { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; }
         .lang-progress { margin-bottom: 12px; }
         .lang-progress span { font-size: 0.8rem; display: block; margin-bottom: 4px; }
         .progress { background: #1f2a44; height: 5px; border-radius: 10px; overflow: hidden; }
         .progress div { background: linear-gradient(90deg, #3b82f6, #60a5fa); height: 100%; }
-        
-        .skill-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+        .skill-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill {
             background: #1f2a44b3;
             border-radius: 30px;
@@ -307,33 +277,16 @@
             align-items: center;
             gap: 5px;
         }
-        .timeline-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        .timeline-dot {
-            width: 7px;
-            height: 7px;
-            background: #3b82f6;
-            border-radius: 50%;
-            margin-top: 5px;
-            flex-shrink: 0;
-        }
+        .timeline-item { display: flex; gap: 12px; margin-bottom: 16px; }
+        .timeline-dot { width: 7px; height: 7px; background: #3b82f6; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
         .timeline-item h4 { font-size: 0.85rem; margin-bottom: 2px; }
         .timeline-item span { font-size: 0.65rem; color: #9ca3af; display: block; margin-bottom: 4px; }
         .timeline-item p { font-size: 0.75rem; color: #cbd5e1; }
-        
-        .edu-list div {
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 8px;
-        }
+        .edu-list div { margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
         .edu-list div:last-child { border-bottom: none; padding-bottom: 0; }
         .edu-list h4 { font-size: 0.85rem; margin-bottom: 2px; }
         .edu-list span { font-size: 0.7rem; color: #9ca3af; }
 
-        /* SECTIONS */
         .section-block {
             background: rgba(8, 12, 24, 0.5);
             backdrop-filter: blur(16px);
@@ -387,16 +340,139 @@
         }
         footer i { color: #ef4444; }
 
-        /* TABLET & DESKTOP */
+        /* SERVICES MODAL - AYOS NA AYOS, KITA LAHAT NG BOX */
+        .services-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 6, 20, 0.98);
+            backdrop-filter: blur(24px);
+            z-index: 20000;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+        .services-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .services-panel {
+            max-width: 1300px;
+            width: 100%;
+            background: linear-gradient(145deg, #0e1428, #080c1c);
+            border-radius: 48px;
+            border: 1px solid rgba(59,130,246,0.6);
+            padding: 40px 32px;
+            position: relative;
+            margin: 20px auto 40px auto;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.8);
+            transform: scale(0.98);
+            transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .services-overlay.active .services-panel {
+            transform: scale(1);
+        }
+        .back-to-portfolio {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(59,130,246,0.2);
+            border: 1px solid #3b82f6;
+            border-radius: 60px;
+            padding: 8px 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 30px;
+        }
+        .back-to-portfolio:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateX(-4px);
+        }
+        .services-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 12px;
+        }
+        .services-title i {
+            color: #3b82f6;
+            margin-right: 8px;
+        }
+        .services-sub {
+            font-size: 0.95rem;
+            color: #b9d0ff;
+            border-left: 3px solid #3b82f6;
+            padding-left: 16px;
+            margin-bottom: 40px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 28px;
+        }
+        .service-card {
+            background: rgba(0, 0, 0, 0.55);
+            border-radius: 28px;
+            padding: 24px 22px;
+            transition: all 0.25s;
+            border: 1px solid rgba(59,130,246,0.3);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #3b82f6;
+            background: #0f172a;
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            color: #cbd5e6;
+            line-height: 1.55;
+        }
+        .service-tag {
+            display: inline-block;
+            background: #1e293b;
+            border-radius: 60px;
+            padding: 5px 14px;
+            font-size: 0.68rem;
+            margin-top: 14px;
+            font-weight: 500;
+        }
+        .services-footer-note {
+            margin-top: 45px;
+            text-align: center;
+            border-top: 1px solid rgba(59,130,246,0.3);
+            padding-top: 28px;
+            font-size: 0.88rem;
+            color: #c9dbff;
+        }
+
         @media (min-width: 768px) {
             .wrapper { padding: 30px 24px; }
             .name-title { font-size: 2.2rem; }
-            .tagline-box p { font-size: 0.85rem; }
             .main-card { flex-direction: row; gap: 28px; padding: 28px; }
             .card-left, .card-right { flex: 1; }
             .projects-grid { grid-template-columns: repeat(2,1fr); }
             .achievements-grid { grid-template-columns: repeat(2,1fr); }
-            .personal-grid { gap: 8px; }
         }
         
         @media (min-width: 1024px) {
@@ -410,6 +486,10 @@
         @keyframes blink {
             0%,100% { opacity: 1; }
             50% { opacity: 0; }
+        }
+
+        #contact-section {
+            scroll-margin-top: 80px;
         }
     </style>
 </head>
@@ -428,6 +508,28 @@
                 <i class="fas fa-key"></i> FORCE THE GATE <i class="fas fa-arrow-right"></i>
             </button>
             <p class="gate-footer">"Click muna, baka maunahan ka pa.<br> Nasa huli ang pagsisi. Sege ka, aray mo!"</p>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES MODAL - AYOS NA, KITA LAHAT -->
+<div id="servicesModal" class="services-overlay">
+    <div class="services-panel">
+        <button id="backToPortfolioBtn" class="back-to-portfolio"><i class="fas fa-arrow-left"></i> Bumalik sa Portfolio</button>
+        <div class="services-title"><i class="fas fa-comment-dots"></i> Let's talk about your project. I deliver quality work, on time, no excuses. Web Development · Graphic Design · Software Solutions · System Automation · Documentation</div>
+        <div class="services-sub">Eto yung mga bagay na kaya kong ibigay, walang halong bola, trabaho lang.</div>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon">📋</div><h3>Custom Management Systems</h3><p>Gawan kita ng sistema para sa Inventory, Library, Booking, HR, Payroll, Gym, Clinic, School Records, lahat web-based at automated.</p><span class="service-tag">Web + Database</span></div>
+            <div class="service-card"><div class="service-icon">⚙️</div><h3>Process Automation</h3><p>Pagod ka na sa manual na report at approval? Ako na bahala mag-automate ng email notifications, referral systems, at workflows mo.</p><span class="service-tag">Gmail Integration</span></div>
+            <div class="service-card"><div class="service-icon">🌐</div><h3>Responsive Web Apps</h3><p>Booking platform man yan o e-commerce, gagawan kita ng real-time dashboard. Kahit anong pwedeng gawing website, kaya ko.</p><span class="service-tag">React · PHP · JS</span></div>
+            <div class="service-card"><div class="service-icon">📊</div><h3>Database Architecture</h3><p>Maayos at secure na backend gamit ang MySQL o SQL Server. Walang magulo, walang mabagal, pangmalakasan.</p><span class="service-tag">Backend Mastery</span></div>
+            <div class="service-card"><div class="service-icon">💻</div><h3>Desktop Software</h3><p>VB.NET o C# gamit ko para sa POS, Inventory, Sales, puro code lang, walang hardware na sakit sa ulo.</p><span class="service-tag">Standalone</span></div>
+            <div class="service-card"><div class="service-icon">🎨</div><h3>Graphic Design</h3><p>Poster, logo, system UI/UX, gagandahan natin yan. Para hindi lang functional, maganda pa sa paningin.</p><span class="service-tag">Designer Touch</span></div>
+            <div class="service-card"><div class="service-icon">📌</div><h3>Booking & Reservation Systems</h3><p>Hotel man yan, salon, restaurant, o equipment, gagawan kita ng booking system na may availability calendar.</p><span class="service-tag">Smart Scheduling</span></div>
+            <div class="service-card"><div class="service-icon">📄</div><h3>Capstone Thesis / Documentation</h3><p>Kailangan mo ng kumpletong documentation? Chapter 1 hanggang 5, UML diagrams, user manuals, tutulungan kita.</p><span class="service-tag">Revise · Format · Polish</span></div>
+        </div>
+        <div class="services-footer-note">
+            <i class="fas fa-smile-wink"></i> "Tara na, gawan na kita ng sistema. Sabi ko sa'yo, pag ako gumawa, gagawin ko best ko ako na bahala sa system mo, ikaw na bahala sakin."
         </div>
     </div>
 </div>
@@ -451,21 +553,22 @@
             </div>
             <div class="tagline-box">
                 <i class="fas fa-quote-left"></i>
-                <p>Code. Create. Innovate. — Turning ideas into stunning digital realities</p>
+                <p>"Tumira ng tres, bakit hindi kita matiis? Pa-automate kana, ano tara!"</p>
                 <i class="fas fa-quote-right"></i>
             </div>
             <div class="action-row">
                 <a href="#" class="pill"><i class="fas fa-code"></i> Web Dev</a>
                 <a href="#" class="pill"><i class="fas fa-palette"></i> Designer</a>
                 <a href="#" class="pill highlight"><i class="fas fa-graduation-cap"></i> IT Grad</a>
-                <a href="#contact" class="btn-pill btn-primary">Contact Me <i class="fas fa-arrow-right"></i></a>
+                <button id="openServicesMainBtn" class="btn-pill service-btn"><i class="fas fa-concierge-bell"></i> Services <i class="fas fa-arrow-right"></i></button>
+                <button id="contactScrollBtn" class="btn-pill btn-primary"><i class="fas fa-envelope"></i> Contact Me <i class="fas fa-arrow-right"></i></button>
                 <a href="#projects" class="btn-pill btn-secondary">View Work <i class="fas fa-eye"></i></a>
             </div>
         </div>
 
         <div class="main-card">
             <div class="card-left">
-                <div class="info-card">
+                <div class="info-card" id="contact-section">
                     <div class="info-header"><i class="fas fa-address-card"></i><h3>Contact</h3></div>
                     <div class="info-body">
                         <div class="info-line"><i class="fas fa-phone-alt"></i> +63 970 550 8581</div>
@@ -570,7 +673,6 @@
 </div>
 
 <script>
-    // Gate System
     const gateOverlay = document.getElementById('gateOverlay');
     const mainWrapper = document.getElementById('mainContentWrapper');
     const unlockBtn = document.getElementById('unlockGateBtn');
@@ -597,7 +699,6 @@
     
     if(unlockBtn) unlockBtn.addEventListener('click', openGate);
     
-    // Typing animation
     const roles = ['Web Developer', 'Graphic Designer', 'IT Graduate'];
     let roleIdx = 0, charIdx = 0, deleting = false;
     let roleTextElem = null;
@@ -633,7 +734,6 @@
         timeoutRef = setTimeout(typeEffect, deleting ? 70 : 110);
     }
     
-    // Scroll reveal
     function startScrollReveal() {
         const items = document.querySelectorAll('.info-card, .project, .achievement');
         const obs = new IntersectionObserver((entries) => {
@@ -650,6 +750,43 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.5s ease';
             obs.observe(el);
+        });
+    }
+    
+    const servicesModal = document.getElementById('servicesModal');
+    const openServicesBtn = document.getElementById('openServicesMainBtn');
+    const backBtn = document.getElementById('backToPortfolioBtn');
+    
+    function openServicesModalFunc() {
+        if(servicesModal) {
+            servicesModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    function closeServicesModalFunc() {
+        if(servicesModal) {
+            servicesModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    if(openServicesBtn) openServicesBtn.addEventListener('click', openServicesModalFunc);
+    if(backBtn) backBtn.addEventListener('click', closeServicesModalFunc);
+    servicesModal.addEventListener('click', (e) => {
+        if(e.target === servicesModal) closeServicesModalFunc();
+    });
+    
+    const contactScrollBtn = document.getElementById('contactScrollBtn');
+    if(contactScrollBtn) {
+        contactScrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactSection = document.getElementById('contact-section');
+            if(contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                contactSection.style.boxShadow = '0 0 0 2px #3b82f6';
+                setTimeout(() => {
+                    contactSection.style.boxShadow = '';
+                }, 1000);
+            }
         });
     }
     
