@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Reynaldo B. Lumbres | Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -340,7 +340,7 @@
         }
         footer i { color: #ef4444; }
 
-        /* SERVICES MODAL - AYOS NA AYOS, CENTERED ANG MGA BOX SA MOBILE */
+        /* SERVICES MODAL */
         .services-overlay {
             position: fixed;
             top: 0;
@@ -399,6 +399,8 @@
             color: white;
             transform: translateX(-4px);
         }
+        
+        /* SERVICES TITLE - ITO ANG TITLE LANG (WALANG TEXT NA KASAMA) */
         .services-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -409,6 +411,29 @@
             color: #3b82f6;
             margin-right: 8px;
         }
+        
+        /* ITO ANG BAGONG FOOTER SECTION - NAKA-JUSTIFY */
+        .services-footer {
+            margin-top: 45px;
+            border-top: 1px solid rgba(59,130,246,0.3);
+            padding-top: 28px;
+        }
+        .footer-quote {
+            text-align: justify;
+            font-size: 0.9rem;
+            color: #c9dbff;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .footer-services-list {
+            text-align: justify;
+            font-size: 0.85rem;
+            color: #90a9d4;
+            letter-spacing: 0.3px;
+            font-weight: 500;
+            word-break: break-word;
+        }
+        
         .services-sub {
             font-size: 0.95rem;
             color: #b9d0ff;
@@ -417,7 +442,6 @@
             margin-bottom: 40px;
         }
 
-        /* ITO ANG PINAKA-IMPORTANTE - PARA CENTER ANG MGA BOX SA MOBILE */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -464,16 +488,7 @@
             margin-top: 14px;
             font-weight: 500;
         }
-        .services-footer-note {
-            margin-top: 45px;
-            text-align: center;
-            border-top: 1px solid rgba(59,130,246,0.3);
-            padding-top: 28px;
-            font-size: 0.88rem;
-            color: #c9dbff;
-        }
 
-        /* MOBILE VIEW - PARA LALO MAG-CENTER ANG MGA BOX */
         @media (max-width: 768px) {
             .services-overlay {
                 padding: 20px 16px;
@@ -503,6 +518,14 @@
             .services-sub {
                 font-size: 0.85rem;
                 text-align: center;
+            }
+            .footer-quote {
+                font-size: 0.82rem;
+                text-align: justify;
+            }
+            .footer-services-list {
+                font-size: 0.75rem;
+                text-align: justify;
             }
         }
 
